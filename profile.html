@@ -1,0 +1,831 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1, user-scalable= no">
+
+    <!--<link rel="stylesheet" href="style.css" type="text/css">-->
+    <!--Bootstrap CSS Package-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+     <!-- font awesome icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        :root{
+            --dark-background-color:#111111;
+            --light-background-color:#fff;
+            --dark-text-color:#eeeeee;
+            --light-text-color:#111;
+        }
+
+        body{
+            box-sizing: border-box;
+            /*background: url("./assets/bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            */
+        }
+
+        .theme-dark{
+            background-color: var(--dark-background-color);
+        }
+
+        .theme-light{
+            background-color: var(--light-background-color);
+        }
+
+        .color-dark{
+            color: var(--light-text-color);
+        }
+        /*** customized classes *****/
+        .font-theme{
+            font-family: 'georgia',sans-serif;
+            color: slategray;
+        }
+        .font-size-14{
+            font-size: 14px;
+        }
+        .font-size-18{
+            font-size: 18px;
+        }
+        .font-size-20{
+            font-size: 20px;
+        }
+        .color-white{
+            color: white;
+        }
+        .color-gray{
+            color:slategray
+        }
+        .color-cadetblue{
+            color:cadetblue
+        }
+
+        .d-none{
+        display: none;
+        }
+
+        .d-block{
+            display: block;
+        }
+        
+        .rotate-180{
+            transform: rotateX(180deg);
+        }
+
+        .reveal-menu{
+            width: 50%;
+        }
+        .hide-menu{
+            width: 0;
+        }
+        /*** customized classes *****/
+
+        a{
+            cursor: pointer;
+        }
+
+        #header {
+            position: relative;
+            background-image: url("./assets/banner4.jpg");
+            background-position: right center;
+            background-size: 1000px;
+            height: 100vh;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        #header #desktop-menu{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 100px 0 0;         
+        }
+
+        #header #mobile-menu{
+            display: none;
+        }
+        
+        #header #mobile-menu p{
+            text-align: right;
+            font-size:40px;
+            padding-right:15px;
+            cursor: pointer;
+        }
+        
+        #header #mobile-menu ul{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background:slategray;
+            transition: all 0.5s ease;
+            list-style: none;
+            z-index: 20;
+            font-family: 'georgia',sans-serif;
+        }
+
+        #header #mobile-menu ul a {
+            text-decoration:none;
+            margin: 0;
+            padding: 0;
+            color: inherit;
+        }
+
+        
+        #header #mobile-menu ul li{
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        #header #mobile-menu ul li:nth-of-type(1){
+            margin-top: 40px;
+        }
+
+        #header #desktop-menu ul{
+            display: flex;
+            list-style: none;
+            font-family: 'georgia',sans-serif;
+            z-index: 2;
+            width: auto;
+        }
+
+        #header #desktop-menu ul li{
+            margin-left: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+
+        #header #desktop-menu ul li:hover{
+            transform: scale(1.1);
+        }
+
+        #header #desktop-menu ul a {
+            text-decoration:none;
+            margin: 0;
+            padding: 0;
+            color: slategray;
+        }
+
+        #header #desktop-menu ul a:hover{
+            color: cadetblue;
+        }
+
+        /******profile image*******/
+        #header #profile-image{
+            position: absolute;
+            top: 15%;
+            left: 30%;
+            width: 32vh;
+            height: 32vh;
+            z-index: 2;
+        }
+
+        #header #text{
+            position: absolute;
+            top: 50%;
+            left: 11%;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        #header #text div:first-child{
+            height: 4px;
+            max-width: 16vw;
+            background: linear-gradient(to right, slategray, white);
+            margin-bottom: .5rem;
+            
+        }
+
+        /*** h1 Text:Hi i'm Francis ***/
+        #header #text h1{
+            font-size: 70px;
+            font-family: 'tahoma',sans-serif;
+        }
+
+         /*** h2 Text:I am a developer ***/
+         #header #text h2{
+            font-size: 40px;
+            font-family: 'tahoma',sans-serif;
+        }
+
+        #header #header-content #text a{
+            text-decoration: none;
+        }
+
+        /*** show profile btn ******/
+        #header #text button{
+            width: 160px;
+            border-radius: 40px 40px 40px 40px;
+            border: 1px solid cadetblue;
+            text-align: center;
+            padding: 8px 0;
+            background-color: transparent;
+            font-size: 20px;
+            font-family: 'tahoma',sans-serif;
+            color: slategray;
+
+        }
+        #header #text button:hover{
+            color: white;
+            background: linear-gradient(to right, slategray, white);
+        }
+        #header #text button:focus{
+            outline: none;
+        }
+        /*** show profile btn ******/
+
+        /**** icons column *****/
+        #header #icon-column{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 92.6vh;
+            width: 50px;
+            background: linear-gradient(slategray, white);
+            color: inherit;
+            z-index: 2;
+            padding: 10px 10px;
+        }
+        /**** icons column *****/
+
+        /*** Menu icon ****/
+        #header #icon-column #menu-icon {
+            visibility: hidden;
+            font-size: 26px;
+        }
+        /*** Menu icon ****/
+
+
+        /**** social media icons *****/
+
+        #header #icon-column #icons{           
+           margin-top: 20vh;
+        }
+
+        #header #icon-column #icons i{
+            color: inherit;
+           margin-top: 20px;
+           transition: all 0.3s ease;
+        }
+        #header #icon-column #icons i:hover{
+           transform: scale(1.5);
+        }
+
+        #header #icon-column #icons div{
+            margin-top: 20px;
+        }
+
+        #header #icon-column #icons div p{
+            color: inherit;
+            margin-left: -6px;
+        }
+         /**** social media icons *****/
+
+        /*   latest works */
+        #latest-works{
+            position: relative;
+        }
+
+        #latest-works .grid .grid-item {
+            margin-right: 1rem;
+            margin-top: 1rem;
+        }
+
+        #latest-works .grid .grid-item .img-box{
+            /*width: 200px;*/
+            width: 20vw;
+            position: relative;
+        }
+        #latest-works .grid .grid-item .img-box .overlay{
+            top: 0;
+            width: 100%;
+            position: absolute;
+            height: 0;
+            background-color: rgba(0, 0, 0, .4);
+            /*transition: height 0.2s ease;*/
+        }
+
+        #latest-works .grid .grid-item .img-box:hover .overlay{
+            height: 100%;
+        }
+
+        #latest-works .grid .grid-item .img-box .site-name{
+            top: 0;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: all 0.2s ease;
+            font-size: 2vw;
+        }
+        #latest-works .grid .grid-item .img-box:hover .site-name{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 1;
+        }
+
+        /**about section**/
+        section#about #profile-card{
+            margin: auto;
+            width: 80%;
+            /*height: 600px;*/
+            box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, .4);
+        }
+
+        section #profile-card .detail{
+            font-size: 18px;
+        }
+        
+        section#about #profile-card .skill-bar{
+            background-color: #bdc9ea;
+            border-radius: 16px;
+        }
+        section#about #profile-card .progress-bar{
+            padding: 0 16px;
+            border-radius: 16px;
+            text-align: center;
+            color:#fff;
+            background-color:cadetblue;
+        }
+
+        section#about #profile-card .skill-sixty{
+            width: 60%;
+        }
+
+        section#about #profile-card .skill-eighty{
+            width: 80%;
+        }
+
+        /*the full screen overlay which displays a slideshow of the apps worked on*/
+        #fullscreen-overlay{
+            position: fixed;
+            top:0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, .9);
+            z-index: 10000;
+            display: none;
+        }
+
+        #fullscreen-overlay .carousel-inner img{
+            height: 460px;
+            width: 100%;
+        }
+
+        /**make the width responsive for the web app slideshow**/
+        #fullscreen-overlay #web-app-slideshow{
+            width: max(600px,1200vw);
+        }
+
+        /**style the width for the mobile app slideshow**/
+        #fullscreen-overlay #mobile-app-slideshow{
+            width: 600px;
+        }
+
+        /**style the prev and next carousel icons for desktops**/
+        #fullscreen-overlay .carousel span{
+            width: 40px;
+            height: 40px;
+        }
+
+        /*** Media Queries ******/
+        @media screen and (max-width: 800px){
+            #header {
+                height: 80vh;
+                background-size: cover;
+            }
+            #header #text h1{
+                color: inherit;
+                font-size: 40px;
+            }
+            #header #text h2{
+                font-size: 20px;
+            }
+            #header #text button{
+                width: 80px;
+                border-radius: 20px 20px 20px 20px;
+                font-size: 14px;
+            }
+            #header #profile-image{
+                width: 20vh;
+                height: 20vh;
+                top: 20%;
+                left: 10%;
+                /*display: none;*/
+            }
+
+            #header #icon-column{
+                height: 80vh;
+            }
+            /*** Menu icon ****/
+            #header #icon-column #menu-icon {
+                visibility: visible;
+            }
+
+            /**remove the horizontal nav menu when using a mobile**/
+            #header #desktop-menu ul{
+                display: none;      
+            }
+            /**display the side nav menu when using a mobile**/
+            #header #mobile-menu{
+                display: block;
+            }
+            
+            section #profile-card .detail{
+                font-size: 14px;
+            }
+
+            /**the carousel images**/
+            #fullscreen-overlay .carousel-inner img{
+                height: 300px;
+                width: 100%;
+            }
+
+            /**style the prev and next carousel icons for mobile**/
+            #fullscreen-overlay .carousel span{
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1024px)and (max-width: 1280px){
+            #header {
+                height: 80vh;
+                background-size: cover;
+            }
+            #header #text h1{
+                color: inherit;
+                font-size: 80px;
+            }
+            #header #text h2{
+                font-size: 60px;
+            }
+            #header #text button{
+                width: 180px;
+                border-radius: 40px 40px 40px 40px;
+                font-size: 34px;
+            }
+            #header #profile-image{
+                width: 20vh;
+                height: 20vh;
+                top: 20%;
+                left: 10%;
+            }
+
+            #header #icon-column{
+                height: 80vh;
+            }
+        }
+        /*** Media Queries ******/
+    </style>
+    
+</head>
+<body>
+    <!--Place the overlay showcasing the apps designed here-->
+    <div id="fullscreen-overlay">
+  
+        
+    </div>
+    <!--Header Area-->
+    <header>
+        <div id="header">
+
+             <!--desktop view inline nav menu-->
+             <nav  id="desktop-menu" class="d-flex justify-content-end">
+                <ul class="font-size-20 text-bold">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#latest-works">Works</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!--mobile view side nav menu-->
+            <nav id="mobile-menu">                
+                <ul id="side-nav-menu" class="font-size-20 text-bold hide-menu">
+                    <p id="close-menu-icon">&times;</p>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#latest-works">Works</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div id="text">
+                <div></div>
+
+                <div class="d-flex">
+                    <span class="color-gray"><h1>H</h1></span>
+                    <span class="color-gray"><h1>i</h1></span>
+                    <span class="color-gray"><h1>!&nbsp;</h1></span>
+                    <span class="color-gray"><h1>i</h1></span>
+                    <span class="color-gray"><h1>'</h1></span>
+                    <span class="color-gray"><h1>m&nbsp;</h1></span>
+                    <span><h1>F</h1></span>
+                    <span><h1>r</h1></span>
+                    <span><h1>a</h1></span>
+                    <span><h1>n</h1></span>
+                    <span><h1>c</h1></span>
+                    <span><h1>i</h1></span>
+                    <span><h1>s</h1></span>
+                </div>
+                
+                <div class="d-flex">
+                    <span class="color-gray"><h2>I&nbsp;</h1></span>
+                    <span class="color-gray"><h2>a</h2></span>
+                    <span class="color-gray"><h2>m&nbsp;</h2></span>
+                    <span class="color-gray"><h2>a&nbsp;</h2></span>
+                    <span class="color-gray"><h2>f</h2></span>
+                    <span class="color-gray"><h2>u</h2></span>
+                    <span class="color-gray"><h2>l</h2></span>
+                    <span class="color-gray"><h2>l&nbsp;</h2></span>
+                    <span><h2>s</h2></span>
+                    <span><h2>t</h2></span>
+                    <span><h2>a</h2></span>
+                    <span><h2>c</h2></span>
+                    <span><h2>k&nbsp;</h2></span>
+                    <span><h2>d</h2></span>
+                    <span><h2>e</h2></span>
+                    <span><h2>v</h2></span>
+                    <span><h2>e</h1></span>
+                    <span><h2>l</h1></span>
+                    <span><h2>o</h1></span>
+                    <span><h2>p</h1></span>
+                    <span><h2>e</h1></span>
+                    <span><h2>r</h1></span>
+                </div>
+
+                <a href="#about"><button type="button">Profile</button></a>
+            </div>
+            
+            <!--profile-image-->
+            <div id="profile-image">
+                <div style="width:100%;height:100%;">
+                    <img src="./assets/profile3.jpg" alt="" style="width: 100%;height: 100%;" class="rounded-circle border">
+                </div>
+            </div>
+            <!--profile-image-->
+
+            <!--icon-column-->
+            <div id="icon-column">
+
+                <!--menu icon-->
+                <div id="menu-icon" class="menuIcon">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                </div>
+                
+                <!--social icons-->
+                <div id="icons"> 
+                    <div>
+                        <i class="fas fa-adjust font-size-20" id="toggle-light-mode" aria-hidden="true"></i> 
+                        <p>night mode</p>
+                    </div>              
+                    <i class="fab fa-facebook font-size-20" aria-hidden="true"></i>
+                    <i class="fab fa-twitter font-size-20" aria-hidden="true"></i>
+                    <i class="fab fa-instagram font-size-20" aria-hidden="true"></i>
+                    <i class="fab fa-linkedin font-size-20" aria-hidden="true"></i>         
+                </div>
+                <!--social icons-->
+
+            </div>
+            <!--icon-column-->
+        </div>        
+    </header>
+    <!--Header Area-->
+
+
+
+    <!--Latest works section containing an image grid showcasing latest works done-->
+        <section id="latest-works">
+            
+            <div class="container mt-5">
+                <h2 class="font-theme">Latest Works</h2>
+
+                <!--Filter buttons-->
+                <div id="filters" class="button-group text-right font-size-16">
+                    <button class="btn is-checked font-theme" data-filter="*">All</button>
+                    <button class="btn font-theme" data-filter=".web">Web Apps</button>
+                    <button class="btn font-theme" data-filter=".mobile">Mobile Apps</button>
+                    <button class="btn font-theme" data-filter=".others">Others</button>
+                </div>
+                <!--Filter buttons-->
+
+                <div id="grid-align" class="row justify-content-center">
+                    <div class="grid" style="width: 60%;">
+                        <div class="grid-item web">
+                            <!--Ecommerce application: Premium gadget hub-->
+                            <div class="img-box" id="ecommerce-app">
+                                <img src="./assets/pgh6.jpg" alt="" width="100%">
+                                <div class="overlay"></div>
+                                <a href="#"><p class="color-white site-name text-center">premiumgadgethub</p></a>
+                            </div>
+
+                        </div>
+                        <div class="grid-item mobile">
+                            <!--Beloxxi Employee Application-->
+                            <div class="img-box" id="beloxxi-app">
+                                <img src="./assets/beloxxiapp9.jpg" alt="" width="100%">
+                                <div class="overlay"></div>
+                                <p class="color-white site-name text-center">Beloxxi App</p>
+                            </div>
+                        </div>
+
+                        <div class="grid-item web">
+                            <!--The php user authentication application-->
+                            <div class="img-box">
+                                <img src="./assets/banner2.jpg" alt="" width="100%">
+                                <div class="overlay"></div>
+                                <a href="#"><p class="color-white site-name text-center">anonymous.com</p></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    <!--Latest works section containing an image grid showcasing latest works done-->
+
+    <!--About section-->
+    <section id="about">
+        <div class="container mt-5">
+            <div id="profile-card" class=" d-flex flex-column align-items-center p-4">
+
+                <!--Profile card image and calligraphy signature-->
+                <div style="width: 30vw; height: 30vw; background-color: white;" class="border">
+                    <img src="./assets/profile3.jpg" alt="" width="100%" height="86%">
+
+                    <!--calligraphy signature-->
+                    <div class="p-1">
+                        <h4 style="font-family: 'Pacifico', cursive;font-size: 2vw;">
+                            Nnaemezie Francis Okeke
+                        </h4>
+                    </div>
+                </div>
+                <!--Profile card image and calligraphy signature-->
+
+                <!--Profile Details-->
+                <div class="w-100 detail">
+                    <div class="mt-5 color-gray"><i class="fas fa-user color-cadetblue"></i>&nbsp;Nnaemezie Francis Okeke</div>
+                    <div class="mt-3 color-gray"><i class="fas fa-home color-cadetblue"></i>&nbsp;Bode Thomas surulere Lagos</div>
+                    <div class="mt-3 color-gray"><i class="fas fa-envelope info color-cadetblue"></i>&nbsp;nnaemezie.okeke@gmail.com</div>
+                    <div class="mt-3 color-gray"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;+2348144285460</div>
+                    
+                </div>
+
+                <hr class="w-100">
+                <!--Skills Section-->
+                <div class="w-100" id="skills-section">
+                    <div class="mt-3 detail font-theme"><i class="fas fa-asterisk info color-cadetblue"></i>&nbsp;Skills</div>
+                    <div class="mt-3">
+                        <p class="font-theme  detail">HTML</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-eighty">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">CSS</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-eighty">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">JAVASCRIPT</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-eighty">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">PHP</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-eighty">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">MySQL</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-eighty">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">Python</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-sixty">60%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">React</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-sixty">60%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">Flutter</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-sixty">60%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme  detail">React Native</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-sixty">60%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>                
+        </div>
+    </section>
+    <!--About section-->
+
+    <!--services section-->
+    <section id="services">
+        <div class="container mt-5">
+            <div class="row">
+                <!--web services-->
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-html5 color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
+                    <div class="m-auto" style="width: 60px;height: 4px;background-color: slategray;"></div>
+                    <p class="font-theme mt-2">Provision of web solutions to businesses to enable businesses reach a global audience and enhance the appeal of product and services</p>
+                </div>
+
+                <!--mobile services-->
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-android color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
+                    <div class="m-auto" style="width: 60px;height: 4px;background-color: slategray;"></div>
+                    <p class="font-theme mt-2">Provision of mobile application solutions to businesses to automate daily tasks in the workplace</p>
+                </div>
+
+                <!--desktop services-->
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-laptop color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
+                    <div class="m-auto" style="width: 60px;height: 4px;background-color: slategray;"></div>
+                    <p class="font-theme mt-2">Provision of desktop application solutions to businesses to automate daily tasks in the workplace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--services section-->
+
+    <!--Footer Area-->
+    <footer id="contact" style="min-height: 200px;width: 100%;background: linear-gradient(to bottom right, slategray, white);">
+        <div class="container">
+            <div class="row w-100 pt-4">
+                <div class="col-md-4 offset-1 text-white">
+                    <h2 class="text-white font-theme">Contact</h2>
+                    <address>
+                        <i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
+                        </br>
+                        <i class="fas fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Nnaemezie Francis Okeke
+                        </br>
+                        <i class="fas fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+2348144285460
+                        </br>
+                        <i class="fas fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Bode Thomas, Surulere, Lagos, Nigeria
+                    </address>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <a href=""><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href=""><i class="fab fa-twitter color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href=""><i class="fab fa-instagram color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href=""><i class="fab fa-linkedin color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                </div>
+    
+            </div>
+        </div>
+
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!--  isotope plugin cdn  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+
+<!-- Custom Javascript -->
+<script src="index.js"></script>
+</body>
+</html>
