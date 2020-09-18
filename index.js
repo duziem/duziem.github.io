@@ -96,31 +96,43 @@ $("#latest-works #beloxxi-app .overlay").click(function(){
 
     let appImages= ["./assets/beloxxiapp1.jpg","./assets/beloxxiapp2.jpg","./assets/beloxxiapp3.jpg","./assets/beloxxiapp4.jpg","./assets/beloxxiapp5.jpg","./assets/beloxxiapp6.jpg","./assets/beloxxiapp7.jpg","./assets/beloxxiapp8.jpg","./assets/beloxxiapp0.jpg"];
     let slideType= "mobile-app-slideshow";
-    setHtml(appImages, slideType);
+    /*caption for the Beloxxi App*/
+    let appCaption= {heading: "Beloxxi Application",body: "This Application was built using Flutter:the Dart framework. The app consists of: -An income calculator which enables employees calculate their earnings; -A profile screen which enables employees view the recent state of their profile in the company's database; -An Info screen which enables an administrator upload content in order to circulate information to other employees via the app"};
+    setHtml(appImages, slideType, appCaption);
 })
 
-/*on clicking the image referring to the beloxxi mobile app*/
+/*on clicking the image referring to the ecommerce app*/
 $("#latest-works #ecommerce-app .overlay").click(function(){
 
     let appImages= ["./assets/pgh1.jpg","./assets/pgh2.jpg","./assets/pgh3.jpg","./assets/pgh4.jpg","./assets/pgh5.jpg"];
     let slideType= "web-app-slideshow";
-    setHtml(appImages, slideType);
+    let appCaption= {heading: "E-commerce Application",body: "This E-commerce Application is built on php. The App enables you to view gadgets that have been uploaded to the site, make orders, and checkout your orders, add to wishlist&add to cart. The App was made for Premium Gadget Gub: an SME that deals in Gadgets and Electornics"};//caption for the ecommerce app
+    setHtml(appImages, slideType, appCaption);
 })
 
-function setHtml(appImages, slideType){
-    let span= '<span id="close-fullscreen-overlay" style="font-size:80px;position:absolute;top:3;right:5vw;color:white;cursor:pointer;width: 80px;height: 80px;">&times;</span><div style="display: flex;align-items: center;justify-content: center;height: 100%;width:100%;"><div id="' + slideType + '" class="carousel slide" data-ride="carousel"><div class="row"><div class="carousel-inner col-8 offset-2 w-100 p-0">';
+/*on clicking the image referring to the php secure user app*/
+$("#latest-works #user-app .overlay").click(function(){
+
+    let appImages= ["./assets/user app1.jpg","./assets/user app2.jpg","./assets/user app3.jpg","./assets/user app4.jpg"];
+    let slideType= "web-app-slideshow";
+    let appCaption= {heading: "",body: ""};//caption for the ecommerce app
+    setHtml(appImages, slideType, appCaption);
+})
+
+function setHtml(appImages, slideType, appCaption){
+    let overlayContent= '<span id="close-fullscreen-overlay" style="font-size:80px;position:absolute;top:3;right:5vw;color:white;cursor:pointer;width: 80px;height: 80px;">&times;</span><div style="display: flex;align-items: center;justify-content: center;height: 100%;width:100%;"><div id="' + slideType + '" class="carousel slide" data-ride="carousel"><div class="row"><div class="carousel-inner col-8 offset-2 w-100 p-0">';
     for(let i=0;i<appImages.length;i++){
         if(i == 0){
-            span += '<div class="carousel-item active"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
+            overlayContent += '<div class="carousel-item active"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
             continue;
         }
-        span += '<div class="carousel-item"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
+        overlayContent += '<div class="carousel-item"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
     
     }
-    span += '</div></div><a class="carousel-control-prev" href="#' + slideType + '" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#' + slideType + '" data-slide="next"><span class="carousel-control-next-icon"></span></a></div></div>';
+    overlayContent += '</div></div><a class="carousel-control-prev" href="#' + slideType + '" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#' + slideType + '" data-slide="next"><span class="carousel-control-next-icon"></span></a></div></div><div id="app-caption" class="text-white" style="position:absolute;bottom:0;left:10vw;"><h4>' + appCaption.heading + '</h4><p>' + appCaption.body + '</p></div>';
 
     $("#fullscreen-overlay").html(
-        span
+        overlayContent
     )
 
     displayFullScreenOverlay();//display the full screen overlay with the new html content
