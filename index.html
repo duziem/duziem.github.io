@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1, user-scalable= no">
 
     <!--<link rel="stylesheet" href="style.css" type="text/css">-->
-    <!--Bootstrap CSS Package--->
+    <!--Bootstrap CSS Package-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
      <!-- font awesome icons -->
@@ -272,10 +272,15 @@
            margin-top: 20vh;
         }
 
+        #header #icon-column #icons a{
+            text-decoration: none;
+            color: inherit;
+        }
+
         #header #icon-column #icons i{
             color: inherit;
-           margin-top: 20px;
-           transition: all 0.3s ease;
+            margin-top: 20px;
+            transition: all 0.3s ease;
         }
         #header #icon-column #icons i:hover{
            transform: scale(1.5);
@@ -472,12 +477,6 @@
                 display: block;
                 font-size: 40px;
             }
-            
-            #latest-works .grid .grid-item .img-box{
-                /*width: 200px;*/
-                width: 34vw;
-                position: relative;
-            }
         }
 
         @media screen and (min-width: 1024px)and (max-width: 1280px){
@@ -613,11 +612,12 @@
                     <div>
                         <i class="fas fa-adjust font-size-20" id="toggle-light-mode" aria-hidden="true"></i> 
                         <p style="line-height: 1em;">night mode</p>
-                    </div>              
-                    <i class="fab fa-facebook font-size-20" aria-hidden="true"></i>
-                    <i class="fab fa-twitter font-size-20" aria-hidden="true"></i>
-                    <i class="fab fa-instagram font-size-20" aria-hidden="true"></i>
-                    <i class="fab fa-linkedin font-size-20" aria-hidden="true"></i>         
+                    </div> 
+                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp font-size-20" aria-hidden="true"></i></a>              
+                    <a href="https://github.com/duziem"><i class="fab fa-github font-size-20" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20" aria-hidden="true"></i></a>
+                    <!--<a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook font-size-20" aria-hidden="true"></i></a>-->
+                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20" aria-hidden="true"></i> </a>        
                 </div>
                 <!--social icons-->
 
@@ -675,7 +675,7 @@
 
                         <div class="grid-item web">
                             <!--Task manager application-->
-                            <div class="img-box" id="user-app">
+                            <div class="img-box" id="task-app">
                                 <img src="./assets/task-app.jpg" alt="" width="100%">
                                 <div class="overlay"></div>
                                 <a href="https://github.com/duziem/task-manager-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Task Manager</p></a>
@@ -683,7 +683,7 @@
                         </div>
 
                         <div class="grid-item web">
-                            <div class="img-box" id="user-app">
+                            <div class="img-box" id="mean-ecommerce-app">
                                 <img src="./assets/pgh4.jpg" alt="" width="100%">
                                 <div class="overlay"></div>
                                 <a href="https://github.com/duziem/ecommerce-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Mean Stack Ecommerce App</p></a>
@@ -691,7 +691,7 @@
                         </div>
 
                         <div class="grid-item web">
-                            <div class="img-box" id="user-app">
+                            <div class="img-box" id="crud-app">
                                 <img src="./assets/crud-app.jpg" alt="" width="100%">
                                 <div class="overlay"></div>
                                 <a href="https://github.com/duziem/mysql-crud-application"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>MySql App</p></a>
@@ -699,7 +699,7 @@
                         </div>
 
                         <div class="grid-item web">
-                            <div class="img-box" id="user-app">
+                            <div class="img-box" id="template">
                                 <img src="./assets/template00.jpg" alt="" width="100%">
                                 <div class="overlay"></div>
                                 <a href="https://github.com/duziem/website-template-00"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Website Template</p></a>
@@ -734,7 +734,7 @@
                 <!--Profile Details-->
                 <div class="w-100 detail">
                     <div class="mt-5 color-gray"><i class="fas fa-user color-cadetblue"></i>&nbsp;Nnaemezie Francis Okeke</div>
-                    <div class="mt-3 color-gray"><i class="fas fa-home color-cadetblue"></i>&nbsp;Lagos, Nigeria</div>
+                    <div class="mt-3 color-gray"><i class="fas fa-toolbox color-cadetblue"></i>&nbsp;Full Stack Developer</div>
                     <div class="mt-3 color-gray"><i class="fas fa-envelope info color-cadetblue"></i>&nbsp;nnaemezie.okeke@gmail.com</div>
                     <div class="mt-3 color-gray"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;+2348144285460 | +2347054820591</div>
                     
@@ -862,10 +862,11 @@
                     </address>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <a href=""><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href=""><i class="fab fa-twitter color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href=""><i class="fab fa-instagram color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href=""><i class="fab fa-linkedin color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <!--<a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>-->
+                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href="https://github.com/duziem"><i class="fab fa-github color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
                 </div>
     
             </div>
