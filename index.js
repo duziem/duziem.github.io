@@ -17,16 +17,34 @@ $("#skills-section").addClass("d-none");
 
 $("#profile-card").mouseover(function(){
     $("#skills-section").removeClass("d-none");
+    if($("#skills-section").hasClass('d-none')){
+        $("#profile-toggle-btn").removeClass('d-none');
+    }else{
+        $("#profile-toggle-btn").addClass('d-none');
+    }
 })
 $("#profile-card").mouseout(function(){
     $("#skills-section").addClass("d-none");
+    if($("#skills-section").hasClass('d-none')){
+        $("#profile-toggle-btn").removeClass('d-none');
+    }else{
+        $("#profile-toggle-btn").addClass('d-none');
+    }
 })
 
+
 //set the skills section display to none when the chevron-circle-down profile-toggle-btn btn is clicked
-/*$("#profile-toggle-btn").click(function(event){
+$("#profile-toggle-btn").click(function(event){
     $("#skills-section").toggleClass("d-none");
-    $(this).toggleClass("rotate-180");
-})*/
+    //$(this).toggleClass("rotate-180");    
+    
+})
+let toggleProfileBtn= document.getElementById('profile-toggle-btn');
+let skill= document.getElementById('skills-section');
+skill.style.display == 'none'
+if(skill.style.display == 'none'){
+    toggleProfileBtn.classList.add('d-none');
+}
 
 /**profile skills section */
 

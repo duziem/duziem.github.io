@@ -30,13 +30,9 @@
 
         body{
             box-sizing: border-box;
-            /*background: url("./assets/bg.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            */
         }
 
+        /*** customized classes *****/
         .theme-dark{
             background-color: var(--dark-background-color);
         }
@@ -48,7 +44,7 @@
         .color-dark{
             color: var(--light-text-color);
         }
-        /*** customized classes *****/
+       
         .font-theme{
             font-family: 'georgia',sans-serif;
             color: slategray;
@@ -276,15 +272,10 @@
            margin-top: 20vh;
         }
 
-        #header #icon-column #icons a{
-            text-decoration: none;
-            color: inherit;
-        }
-
         #header #icon-column #icons i{
             color: inherit;
-            margin-top: 20px;
-            transition: all 0.3s ease;
+           margin-top: 20px;
+           transition: all 0.3s ease;
         }
         #header #icon-column #icons i:hover{
            transform: scale(1.5);
@@ -311,6 +302,7 @@
         }
 
         #latest-works .grid .grid-item .img-box{
+            /*width: 200px;*/
             width: 20vw;
             position: relative;
         }
@@ -320,7 +312,6 @@
             position: absolute;
             height: 0;
             background-color: rgba(0, 0, 0, .4);
-            /*transition: height 0.2s ease;*/
         }
 
         #latest-works .grid .grid-item .img-box:hover .overlay{
@@ -347,7 +338,7 @@
         section#about #profile-card{
             margin: auto;
             width: 80%;
-            box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, .4);
+            box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .4);
         }
 
         section #profile-card .detail{
@@ -406,13 +397,16 @@
             height: 40px;
         }
 
-        
+        #profile-toggle-btn{
+                display: none;
+        }
 
         /*** Media Queries ******/
         @media screen and (max-width: 800px){
             #header {
                 height: 80vh;
                 background-size: cover;
+                background-position: center center;
             }
             #header #text h1{
                 color: inherit;
@@ -431,6 +425,7 @@
                 height: 20vh;
                 top: 20%;
                 left: 10%;
+                /*display: none;*/
             }
 
             #header #icon-column{
@@ -472,6 +467,11 @@
             #fullscreen-overlay #app-caption p{
                 font-size:12px
             }
+
+            #profile-toggle-btn{
+                display: block;
+                font-size: 40px;
+            }
         }
 
         @media screen and (min-width: 1024px)and (max-width: 1280px){
@@ -512,10 +512,8 @@
 </head>
 <body>
     <!--Place the overlay showcasing the apps designed here-->
-    <div id="fullscreen-overlay">
-  
-        
-    </div>
+    <div id="fullscreen-overlay"></div>
+
     <!--Header Area-->
     <header>
         <div id="header">
@@ -608,13 +606,12 @@
                 <div id="icons"> 
                     <div>
                         <i class="fas fa-adjust font-size-20" id="toggle-light-mode" aria-hidden="true"></i> 
-                        <p>night mode</p>
-                    </div>
-                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp font-size-20" aria-hidden="true"></i></a>              
-                    <a href="https://github.com/duziem"><i class="fab fa-github font-size-20" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20" aria-hidden="true"></i></a>
-                    <a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook font-size-20" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20" aria-hidden="true"></i> </a>        
+                        <p style="line-height: 1em;">night mode</p>
+                    </div>              
+                    <i class="fab fa-facebook font-size-20" aria-hidden="true"></i>
+                    <i class="fab fa-twitter font-size-20" aria-hidden="true"></i>
+                    <i class="fab fa-instagram font-size-20" aria-hidden="true"></i>
+                    <i class="fab fa-linkedin font-size-20" aria-hidden="true"></i>         
                 </div>
                 <!--social icons-->
 
@@ -642,13 +639,13 @@
                 <!--Filter buttons-->
 
                 <div id="grid-align" class="row justify-content-center">
-                    <div class="grid" style="width: 60%;">
+                    <div class="grid" style="width: 80%;">
                         <div class="grid-item web">
                             <!--Ecommerce application: Premium gadget hub-->
                             <div class="img-box" id="ecommerce-app">
                                 <img src="./assets/pgh6.jpg" alt="" width="100%">
                                 <div class="overlay"></div>
-                                <a href="#"><p class="color-white site-name text-center">Ecommerce App</p></a>
+                                <a href="https://github.com/duziem/php-ecommerce-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Ecommerce App</p></a>
                             </div>
 
                         </div>
@@ -657,7 +654,7 @@
                             <div class="img-box" id="beloxxi-app">
                                 <img src="./assets/beloxxiapp9.jpg" alt="" width="100%">
                                 <div class="overlay"></div>
-                                <p class="color-white site-name text-center">Beloxxi App</p>
+                                <a href="https://github.com/duziem/beloxxi-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Beloxxi App</p></a>
                             </div>
                         </div>
 
@@ -666,7 +663,40 @@
                             <div class="img-box" id="user-app">
                                 <img src="./assets/user app1.jpg" alt="" width="100%">
                                 <div class="overlay"></div>
-                                <a href="#"></a><p class="color-white site-name text-center">Secure User App</p></a>
+                                <a href="https://github.com/duziem/php-secure-user-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Secure User App</p></a>
+                            </div>
+                        </div>
+
+                        <div class="grid-item web">
+                            <!--Task manager application-->
+                            <div class="img-box" id="user-app">
+                                <img src="./assets/task-app.jpg" alt="" width="100%">
+                                <div class="overlay"></div>
+                                <a href="https://github.com/duziem/task-manager-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Task Manager</p></a>
+                            </div>
+                        </div>
+
+                        <div class="grid-item web">
+                            <div class="img-box" id="user-app">
+                                <img src="./assets/pgh4.jpg" alt="" width="100%">
+                                <div class="overlay"></div>
+                                <a href="https://github.com/duziem/ecommerce-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Mean Stack Ecommerce App</p></a>
+                            </div>
+                        </div>
+
+                        <div class="grid-item web">
+                            <div class="img-box" id="user-app">
+                                <img src="./assets/crud-app.jpg" alt="" width="100%">
+                                <div class="overlay"></div>
+                                <a href="https://github.com/duziem/mysql-crud-application"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>MySql App</p></a>
+                            </div>
+                        </div>
+
+                        <div class="grid-item web">
+                            <div class="img-box" id="user-app">
+                                <img src="./assets/template00.jpg" alt="" width="100%">
+                                <div class="overlay"></div>
+                                <a href="https://github.com/duziem/website-template-00"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Website Template</p></a>
                             </div>
                         </div>
 
@@ -698,12 +728,17 @@
                 <!--Profile Details-->
                 <div class="w-100 detail">
                     <div class="mt-5 color-gray"><i class="fas fa-user color-cadetblue"></i>&nbsp;Nnaemezie Francis Okeke</div>
-                    <div class="mt-3 color-gray"><i class="fas fa-toolbox color-cadetblue"></i>&nbsp;Full Stack Developer</div>
+                    <div class="mt-3 color-gray"><i class="fas fa-home color-cadetblue"></i>&nbsp;Lagos, Nigeria</div>
                     <div class="mt-3 color-gray"><i class="fas fa-envelope info color-cadetblue"></i>&nbsp;nnaemezie.okeke@gmail.com</div>
-                    <div class="mt-3 color-gray"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;+2348144285460</div>
+                    <div class="mt-3 color-gray"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;+2348144285460 | +2347054820591</div>
                     
                 </div>
-
+                 <!-- profile toggle button-->
+                    
+                    <span id="profile-toggle-btn">
+                        <i class="fas fa-chevron-down color-cadetblue" aria-hidden="true"></i>
+                    </span>
+                    
                 <hr class="w-100">
                 <!--Skills Section-->
                 <div class="w-100" id="skills-section">
@@ -744,13 +779,6 @@
                     </div>
 
                     <div class="mt-3">
-                        <p class="font-theme  detail">Wordpress</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-eighty">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
                         <p class="font-theme  detail">Python</p>
                         <div class="skill-bar">
                             <div class="progress-bar skill-sixty">60%</div>
@@ -760,7 +788,7 @@
                     <div class="mt-3">
                         <p class="font-theme  detail">React</p>
                         <div class="skill-bar">
-                            <div class="progress-bar skill-sixty">60%</div>
+                            <div class="progress-bar skill-eighty">80%</div>
                         </div>
                     </div>
 
@@ -792,21 +820,21 @@
                 <div class="col-lg-4 text-center">
                     <i class="fab fa-html5 color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background-color: slategray;"></div>
-                    <p class="font-theme mt-2">Provision of web solutions to businesses to enable businesses reach a global audience and enhance the appeal of product and services</p>
+                    <p class="font-theme mt-2">Provision of web solutions to businesses and organizations to enable them network with a global audience and enhance the appeal of product and services</p>
                 </div>
 
                 <!--mobile services-->
                 <div class="col-lg-4 text-center">
                     <i class="fab fa-android color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background-color: slategray;"></div>
-                    <p class="font-theme mt-2">Provision of mobile application solutions to businesses to automate daily tasks in the workplace</p>
+                    <p class="font-theme mt-2">Provision of mobile application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                 </div>
 
                 <!--desktop services-->
                 <div class="col-lg-4 text-center">
                     <i class="fas fa-laptop color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background-color: slategray;"></div>
-                    <p class="font-theme mt-2">Provision of desktop application solutions to businesses to automate daily tasks in the workplace</p>
+                    <p class="font-theme mt-2">Provision of desktop application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                 </div>
             </div>
         </div>
@@ -822,19 +850,16 @@
                     <address>
                         <i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
                         </br>
-                        <i class="fas fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Nnaemezie Francis Okeke
+                        <i class="fas fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591
                         </br>
-                        <i class="fas fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+2348144285460
-                        </br>
-                        <i class="fas fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Bode Thomas, Surulere, Lagos, Nigeria
+                        <i class="fas fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Lagos, Nigeria
                     </address>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href="https://github.com/duziem"><i class="fab fa-github color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href=""><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href=""><i class="fab fa-twitter color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href=""><i class="fab fa-instagram color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href=""><i class="fab fa-linkedin color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
                 </div>
     
             </div>
