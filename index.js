@@ -1,5 +1,86 @@
 $(document).ready(function(){
-    // isotope filter
+
+/** create a typewriter animation for the welcome text-- Hi i'm Francis... */
+function typewriter(text, i, textRowIndex, callBackFn, currentText){
+
+    
+    if(i < text.length){
+
+        let space;
+        if(text[i].isSpaceNeeded != null || text[i].isSpaceNeeded != undefined){
+            space= '&nbsp;';
+        }else{
+            space= '';
+        }
+
+        if(textRowIndex == 0){
+            
+            currentText += "<span class='color-" + text[i].color + "'><h1>" + text[i].text + space + "</h1></span>"; // update the current text-- here the h1 element is used
+            let firstRow= document.getElementById('first-row-of-text'); //get the first row of text container
+            firstRow.innerHTML= `${currentText}<span class="blinking-insert-line color-gray"></span>`;
+            //$('#first-row-of-text').html(`<span class=${text[i].color}><h1>${currentText + space}</h1></span><span id="blinking-insert-line"></span>`);
+        
+        }else if(textRowIndex == 1){
+            currentText += "<span class='color-" + text[i].color + "'><h2>" + text[i].text + space + "</h2></span>"; // update the current text-- here the h2 element is used
+            let secondRow= document.getElementById('second-row-of-text');//get the second row of text container
+            secondRow.innerHTML= `${currentText}<span class="blinking-insert-line color-gray"></span>`;
+            //$('#second-row-of-text').html(`<span class=${text[i].color}><h1>${currentText + space}</h1></span><span id="blinking-insert-line"></span>`);
+        }
+
+        setTimeout(() => {
+            typewriter(text, i + 1, textRowIndex, callBackFn, currentText);
+        }, 100);
+        
+    }else{
+        
+        /**clear the blinking insert line */
+        let blinkingLines= document.getElementsByClassName('blinking-insert-line');
+        for(blinkingLine of blinkingLines){
+            blinkingLine.style.display= 'none';
+        }
+        /**clear the blinking insert line */
+       
+        //call the callBackFn containing the startAnimation function in order to render the second row of welcome text: 'I am a full stack developer'
+        if(textRowIndex <= 1){
+            callBackFn();
+        }
+        
+    }
+}
+
+function startAnimation(i){
+    let color1= 'gray';
+    let color2= 'white';
+
+    let textRow= [
+        [
+            
+            {text:'H',color:color1}, {text:'i',color:color1,isSpaceNeeded:true}, {text:'i',color:color1}, {text:"'",color:color1}, {text:'m',color:color1,isSpaceNeeded:true}, {text:'F',color:color2},
+            {text:'r',color:color2}, {text:'a',color:color2}, {text:'n',color:color2}, {text:'c',color:color2}, {text:'i',color:color2}, {text:'s',color:color2}
+        
+        ],
+        
+        [
+            {text:'I',color:color1,isSpaceNeeded: true}, {text:'a',color:color1}, {text:'m',color:color1,isSpaceNeeded: true}, {text:"a",color:color1,isSpaceNeeded: true}, {text:'f',color:color1}, {text:'u',color:color1},
+            {text:'l',color:color1}, {text:'l',color:color1,isSpaceNeeded: true}, {text:'s',color:color2}, {text:'t',color:color2}, {text:'a',color:color2}, {text:'c',color:color2},
+            {text:'k',color:color2,isSpaceNeeded: true}, {text:'d',color:color2}, {text:'e',color:color2}, {text:'v',color:color2}, {text:'e',color:color2}, {text:'l',color:color2}, 
+            {text:'o',color:color2}, {text:'p',color:color2}, {text:'e',color:color2}, {text:'r',color:color2}
+        ]
+    ];
+
+    let text= textRow[i];
+
+    if(i < textRow.length){
+        typewriter(text, 0, i, function(){startAnimation(i + 1)}, '');
+    }
+}
+
+// calling this function with a parameter of 0 renders the first row of welcome text: 'Hi i'm Francis'
+startAnimation(0); // call the animation function for the first time
+
+/** create a typewriter animation for the welcome text-- Hi i'm Francis... */
+
+// isotope filter
 var $grid = $(".grid").isotope({
     itemSelector : '.grid-item',
     layoutMode : 'fitRows'
@@ -33,10 +114,10 @@ $("#profile-card").mouseout(function(){
 })
 
 
-//set the skills section display to none when the chevron-circle-down profile-toggle-btn btn is clicked
+//set the skills section display to none when the chevron-down profile-toggle-btn btn is clicked
 $("#profile-toggle-btn").click(function(event){
     $("#skills-section").toggleClass("d-none");
-    //$(this).toggleClass("rotate-180");    
+    $(this).toggleClass("rotate-180");    
     
 })
 let toggleProfileBtn= document.getElementById('profile-toggle-btn');
@@ -59,24 +140,7 @@ $("#toggle-light-mode").click(function(event){
     $("body").toggleClass("theme-light");
     $("body").toggleClass("theme-dark");
     $("#header").toggleClass("color-white");
-   /*
-   $(this).removeClass(" color-white");
-   $(this).addClass(" color-dark");*/
-
-   /*
-   let color= $(this).css("color");
-   color= color.toString();
-    alert(color);
-
-   if(color === 'rgb(255,255,255)'){
-    $(this).css("color", "black");
-   }else{
-    $(this).css("color", "white");
-   }
-   */
-
-   /*event.target.addClass("color-dark");*/
-   
+    $("#header").toggleClass("color-dark");
 })
 /**Toggle between light and dark mode */
 
@@ -90,7 +154,7 @@ $("#menu-icon").click(function(evt){
 
 //close the side menu when the close-menu-icon 'x' is clicked
 $("#close-menu-icon").click(function(evt){
-    evt.stopPropagation();
+    //evt.stopPropagation();
 
     $("#side-nav-menu").removeClass("reveal-menu");
     $("#side-nav-menu").addClass("hide-menu");
@@ -114,8 +178,9 @@ $("#latest-works #beloxxi-app .overlay").click(function(){
 
     let appImages= ["./assets/beloxxiapp1.jpg","./assets/beloxxiapp2.jpg","./assets/beloxxiapp3.jpg","./assets/beloxxiapp4.jpg","./assets/beloxxiapp5.jpg","./assets/beloxxiapp6.jpg","./assets/beloxxiapp7.jpg","./assets/beloxxiapp8.jpg","./assets/beloxxiapp0.jpg"];
     let slideType= "mobile-app-slideshow";
+
     /*caption for the Beloxxi App*/
-    let appCaption= {heading: "Beloxxi Application",body: "This Application was built using Flutter:the Dart framework. The app consists of: -An income calculator which enables employees calculate their earnings; -A profile screen which enables employees view the recent state of their profile in the company's database; -An Info screen which enables an administrator upload content in order to circulate information to other employees via the app"};
+    let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter:the Dart framework. The app consists of: An income calculator which enables employees calculate their earnings; A profile screen which enables employees view the recent state of their profile in the company's database; An Info screen which enables an administrator upload content in order to circulate information to other employees via the app"};
     setHtml(appImages, slideType, appCaption);
 })
 
@@ -133,7 +198,7 @@ $("#latest-works #user-app .overlay").click(function(){
 
     let appImages= ["./assets/user app1.jpg","./assets/user app2.jpg","./assets/user app3.jpg","./assets/user app4.jpg"];
     let slideType= "web-app-slideshow";
-    let appCaption= {heading: "",body: ""};//caption for the ecommerce app
+    let appCaption= {heading: "PHP Secure User App",body: ""}; //caption for the app
     setHtml(appImages, slideType, appCaption);
 })
 
@@ -153,9 +218,11 @@ function setHtml(appImages, slideType, appCaption){
         overlayContent
     )
 
-    displayFullScreenOverlay();//display the full screen overlay with the new html content
+    $('body').css('position', 'fixed'); //make the entire document fixed in order to prevent scrolling when the overlay is open
 
-    closeFullScreenOverlay();//close the full screen overlay
+    displayFullScreenOverlay(); //display the full screen overlay with the new html content
+
+    closeFullScreenOverlay(); //close the full screen overlay
 }
 
 /*display the full screen overlay*/
@@ -165,10 +232,40 @@ function displayFullScreenOverlay(){
 
 /*close the full screen overlay*/
 function closeFullScreenOverlay(){
-    $("#close-fullscreen-overlay").click(function(){
-        $("#fullscreen-overlay").css("display","none");
-        $("#fullscreen-overlay").html();
+    $("#close-fullscreen-overlay").click(function(){4
+        $("#fullscreen-overlay").css("display","none"); //remove the overlay from view
+        $("#fullscreen-overlay").html(); //clear the contents of the overlay
+        $('body').css('position', 'static'); // make the document scrollable again
     })
+}
+
+
+/*slide the 3 elements that display my services upwards one after the other when the window is scrolled to that section of the document*/
+window.onscroll = function(){slideUpFunction()};		
+function slideUpFunction(){
+    if(document.body.scrollTop >= 1360 || document.documentElement.scrollTop >= 1360){
+        var services= document.getElementsByClassName("services");
+        services[0].style.visibility= "visible";
+            services[0].classList.add("slideUp");
+        /*
+        var i;
+        for(i=0;i<services.length;i++){
+            services[i].style.visibility= "visible";
+            services[i].classList.add("slideUp");
+        }
+        */
+    }
+    if(document.body.scrollTop > 1520 || document.documentElement.scrollTop > 1520){
+        var services= document.getElementsByClassName("services");
+        services[1].style.visibility= "visible";
+        services[1].classList.add("slideUp");
+    }
+    if(document.body.scrollTop >= 1620 || document.documentElement.scrollTop >= 1620){
+        var services= document.getElementsByClassName("services");
+        services[2].style.visibility= "visible";
+        services[2].classList.add("slideUp");
+    }
+
 }
 
 })
