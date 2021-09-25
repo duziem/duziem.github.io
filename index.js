@@ -49,8 +49,9 @@ function typewriter(text, i, textRowIndex, callBackFn, currentText){
 }
 
 function startAnimation(i){
+    /*create variables representing the text color*/
     let color1= 'gray';
-    let color2= 'white';
+    let color2= 'inherit';
 
     let textRow= [
         [
@@ -115,11 +116,13 @@ $("#profile-card").mouseout(function(){
 
 
 //set the skills section display to none when the chevron-down profile-toggle-btn btn is clicked
+/*
 $("#profile-toggle-btn").click(function(event){
     $("#skills-section").toggleClass("d-none");
     $(this).toggleClass("rotate-180");    
     
 })
+*/
 let toggleProfileBtn= document.getElementById('profile-toggle-btn');
 let skill= document.getElementById('skills-section');
 skill.style.display == 'none'
@@ -141,6 +144,10 @@ $("#toggle-light-mode").click(function(event){
     $("body").toggleClass("theme-dark");
     $("#header").toggleClass("color-white");
     $("#header").toggleClass("color-dark");
+    $("#myServices .services i").toggleClass("color-white");
+    $("#myServices .services i").toggleClass("color-dark");
+    $("section#about #profile-card").toggleClass("shadow-light");
+    $("section#about #profile-card").toggleClass("shadow-dark");
 })
 /**Toggle between light and dark mode */
 
@@ -171,6 +178,59 @@ $("html,body").click(function(evt){
     }
 })
 
+/*This code section below is for the nav menu */
+//Begin
+
+    $("#header .nav-menu #about-link").click(
+        (e)=>{
+            e.preventDefault();
+            let about= document.getElementById("about")
+            about.scrollIntoView({behavior:"smooth"});
+        }
+    )
+
+    $("#header .nav-menu #works-link").click(
+        (e)=>{
+            e.preventDefault();
+            let works= document.getElementById("latest-works")
+            works.scrollIntoView({behavior:"smooth"});
+        }
+    )
+
+    $("#header .nav-menu #services-link").click(
+        (e)=>{
+            e.preventDefault();
+            let services= document.getElementById("myServices")
+            services.scrollIntoView({behavior:"smooth"});
+        }
+    )
+
+    $("#header .nav-menu #contact-link").click(
+        (e)=>{
+            e.preventDefault();
+            let contact= document.getElementById("contact")
+            contact.scrollIntoView({behavior:"smooth"});
+        }
+    )
+
+    $("header #site-logo").click(
+        (e)=>{
+            e.preventDefault();
+            let header= document.getElementById("header");
+            header.scrollIntoView({behavior:"smooth"});
+        }
+    )
+
+    $("#header #text #profile-btn").click(
+        (e)=>{
+            e.preventDefault();
+            let about= document.getElementById("about")
+            about.scrollIntoView({behavior:"smooth"});
+        }
+    )
+//End
+/*This code section is for the nav menu */
+ 
 /**The code below controls the full screen overlay displaying the app carousel */
 
 /*on clicking the image referring to the beloxxi mobile app*/
@@ -218,7 +278,7 @@ function setHtml(appImages, slideType, appCaption){
         overlayContent
     )
 
-    $('body').css('position', 'fixed'); //make the entire document fixed in order to prevent scrolling when the overlay is open
+    //$('body').css('position', 'fixed'); //make the entire document fixed in order to prevent scrolling when the overlay is open
 
     displayFullScreenOverlay(); //display the full screen overlay with the new html content
 
@@ -245,8 +305,9 @@ window.onscroll = function(){slideUpFunction()};
 function slideUpFunction(){
     if(document.body.scrollTop >= 1360 || document.documentElement.scrollTop >= 1360){
         var services= document.getElementsByClassName("services");
+        //alert(services[0].getBoundingClientRect().top);
         services[0].style.visibility= "visible";
-            services[0].classList.add("slideUp");
+        services[0].classList.add("slideUp");
         /*
         var i;
         for(i=0;i<services.length;i++){
@@ -264,6 +325,7 @@ function slideUpFunction(){
         var services= document.getElementsByClassName("services");
         services[2].style.visibility= "visible";
         services[2].classList.add("slideUp");
+        
     }
 
 }

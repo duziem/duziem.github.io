@@ -12,7 +12,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 
 
-        <style>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -30,6 +30,8 @@
 
         body{
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing:grayscale;
         }
 
         /*** customized classes *****/
@@ -109,6 +111,13 @@
         .skill-ninety{
             width: 90%;
         }
+
+        .shadow-dark{
+            box-shadow: 0 0 6px rgba(255,255,255,0.2);
+        }
+        .shadow-light{
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        }
         /*** customized classes *****/
 
         a{
@@ -117,13 +126,13 @@
 
         #header {
             position: relative;
-            background: url("./assets/banner4.jpg");
-            background-position: 95% 50%;
-            /*background-position: right center;*/
+            background: url("./assets/Effect1.png");
+            background-position: 95% 30%;
             background-size: 1000px;
             height: 100vh;
             background-repeat: no-repeat;
             overflow: hidden;
+            z-index: 200;
         }
 
         #header #desktop-menu{
@@ -136,6 +145,7 @@
 
         #header #mobile-menu{
             display: none;
+            z-index: 200;
         }
         
         #header #mobile-menu p{
@@ -153,7 +163,7 @@
             background:#708090;
             transition: all 0.5s ease;
             list-style: none;
-            z-index: 20;
+            z-index: 200;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing:grayscale;
         }
@@ -168,7 +178,7 @@
         
         #header #mobile-menu ul li{
             margin-left: 20px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         #header #mobile-menu ul li:nth-of-type(1){
             margin-top: 40px;
@@ -177,14 +187,12 @@
         #header #desktop-menu ul{
             display: flex;
             list-style: none;
-            z-index: 2;
+            z-index: 200;
             width: auto;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing:grayscale;
         }
 
         #header #desktop-menu ul li{
-            margin-left: 15px;
+            margin-left: 24px;
             cursor: pointer;
             transition: all 0.3s ease-in;
         }
@@ -197,21 +205,7 @@
             text-decoration:none;
             margin: 0;
             padding: 0;
-            color: slategray;
-        }
-
-        #header #desktop-menu ul a:hover{
-            color: cadetblue;
-        }
-
-        /******profile image*******/
-        #header #profile-image{
-            position: absolute;
-            top: 15%;
-            left: 30%;
-            width: 32vh;
-            height: 32vh;
-            z-index: 2;
+            color: inherit;
         }
 
         #header #text{
@@ -224,12 +218,12 @@
             z-index: 2;
         }
 
+        /** The horizontal bar above the Text:"Hi i'm Francis I am a full stack developer"**/
         #header #text div:first-child{
             height: 4px;
             max-width: 16vw;
             background: linear-gradient(to right, slategray, white);
-            margin-bottom: .5rem;
-            
+            margin-bottom: .5rem;          
         }
 
         /*** h1 Text:Hi i'm Francis ***/
@@ -240,7 +234,7 @@
             -moz-font-smoothing:grayscale;
         }
 
-         /*** h2 Text:I am a developer ***/
+         /*** h2 Text:I am a full stack developer ***/
          #header #text h2{
             font-size: 40px;
             font-family: 'tahoma',sans-serif;
@@ -270,19 +264,18 @@
             color: white;
             background: cadetblue;
             box-shadow: 0 5px 10px cadetblue,0 -5px 10px cadetblue;
-            /*box-shadow: 0 4px 10px inset cadetblue,0 5px 12px cadetblue,0 -4px 10px inset cadetblue,0 -5px 12px cadetblue;*/
         }
         #header #text button:focus{
             outline: none;
         }
         /*** show profile btn ******/
 
-                /**** icons column *****/
+        /**** icons column *****/
         #header #icon-column{
             position: absolute;
             top: 0;
             right: 0;
-            height: 92.6vh;
+            height: 100vh;
             width: 50px;
             background: linear-gradient(slategray, white);
             color: inherit;
@@ -314,6 +307,7 @@
             color: inherit;
             margin-top: 20px;
             transition: all 0.3s ease;
+            filter: drop-shadow(-1px -1px 2px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))
         }
 
         /*increase the size of the social media icons when the cursor hovers over them--exclude the night mode icon*/
@@ -331,26 +325,37 @@
         }
          /**** social media icons *****/
 
-        /*   latest works */
+        /***********   latest works **************/
         #latest-works{
             position: relative;
         }
 
         #latest-works .grid .grid-item {
             margin-right: 1rem;
-            margin-top: 1rem;
+            margin-top: 3.5rem;
         }
 
         #latest-works .grid .grid-item .img-box{
-            width: 20vw;
+            width: 32vw;
             position: relative;
+            overflow: hidden;
         }
+
+        #latest-works .grid .grid-item .img-box img{
+            transition: 0.5s ease-in-out;
+        }
+
         #latest-works .grid .grid-item .img-box .overlay{
             top: 0;
             width: 100%;
             position: absolute;
             height: 0;
             background-color: rgba(0, 0, 0, .4);
+        }
+
+        #latest-works .grid .grid-item .img-box:hover img{
+            transform: scale(1.2, 1.2);
+
         }
 
         #latest-works .grid .grid-item .img-box:hover .overlay{
@@ -380,7 +385,7 @@
         section#about #profile-card{
             margin: auto;
             width: 80%;
-            box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .4);
+            /*box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);*/
         }
 
         section #profile-card .detail{
@@ -427,20 +432,27 @@
             width: 600px;
         }
 
-        /**style the prev and next carousel icons for desktops**/
+        /**style the prev and next carousel icons for when viewing on desktop**/
         #fullscreen-overlay .carousel span{
             width: 40px;
             height: 40px;
         }
 
+        /*Set the chevron-down icon display property (shown on the profile card when viewing on smaller screens) to none*/
         #profile-toggle-btn{
-                display: none;
+            display: none;
         }
 
         #myServices .services{
             visibility: hidden;
             padding: 0;
             margin: 0;
+        }
+
+        /* Create a drop down shadow for the services icons*/
+        #myServices .services i{
+            font-size: 80px;
+            filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.2)) drop-shadow(3px 3px 5px rgba(0,0,0,0.2))
         }
 
         /*setup the slideup animation*/
@@ -471,15 +483,27 @@
 				transform:translateY(0);	
 			}
 		}
+		@-moz-keyframes slideup{
+			0%{
+				opacity:0;
+				transform:translateY(70%);
+			}
+			100%{
+				opacity:1;
+				transform:translateY(0);	
+			}
+		}
 
-        /**make some changes to the welcome text**/
+        /*This is the vertical blinking insert line usually seen when text is being typed
+           In this case it's being used for the text "Hi I'm Francis\nI am a full stack developer"
+        */
         #text .blinking-insert-line{
             border-right: 3px solid;
             animation: blink 1s steps(1) infinite;
             
         }
 
-        /** create an animation **/
+        /** create an animation for the blinking insert line**/
         @keyframes blink{
 
             50%{
@@ -494,6 +518,13 @@
             }
         }
 
+        @-moz-keyframes blink{
+
+            50%{
+                border-right-color: transparent;
+            }
+        }
+
         /*** Media Queries ******/
         @media screen and (max-width: 800px){
             #header {
@@ -501,7 +532,7 @@
                 background-size:cover;
                 background-position: center right;
                 background-image: url("./assets/header-img.jpg");
-                background-attachment: fixed;
+                /*background-attachment: fixed;*/
             }
             #header #text h1{
                 color: slategray;
@@ -519,14 +550,14 @@
 
             /*set display of the profile image to none*/
             #header #profile-image{
-               /* width: 20vh;
-                height: 20vh;
-                top: 20%;
-                left: 10%;
-                */
                 display: none;
             }
 
+            /*latest works section*/
+            #latest-works .grid .grid-item .img-box{
+                width: 70vw;
+            }
+            
             #header #icon-column{
                 height: 80vh;
             }
@@ -573,12 +604,6 @@
                 font-size: 40px;
             }
 
-            /*latest works section*/
-            #latest-works .grid .grid-item .img-box{
-                width: 34vw;
-                position: relative;
-            }
-
         }
 
         @media screen and (min-width: 1024px)and (max-width: 1280px){
@@ -588,15 +613,15 @@
             }
             #header #text h1{
                 color: inherit;
-                font-size: 80px;
-            }
-            #header #text h2{
                 font-size: 60px;
             }
+            #header #text h2{
+                font-size: 40px;
+            }
             #header #text button{
-                width: 180px;
+                width: 150px;
                 border-radius: 40px 40px 40px 40px;
-                font-size: 34px;
+                font-size: 30px;
             }
             #header #profile-image{
                 width: 20vh;
@@ -613,7 +638,7 @@
                 font-size:14px
             }
         }
-        /*** Media Queries ******/
+        /*** Media Queries ******/      
     </style>
     
 </head>
@@ -623,52 +648,45 @@
 
     <!--Header Area-->
     <header>
+        <div style="position: fixed;width: 80px;height: 60px;margin: 5px 10px;z-index:1000">
+            <a id="site-logo" href="#"><img src="./assets/mylogo.svg" alt="portfolio-logo" width="100%" height="100%"></a>
+        </div>
+        
         <div id="header">
-
-            <div style="position: fixed;width: 80px;height: 60px;margin: 5px 10px;z-index:1000">
-                <a href="#header"><img src="./assets/mylogo.svg" alt="portfolio-logo" width="100%" height="100%"></a>
-            </div>
-            
              <!--desktop view inline nav menu-->
-            <nav  id="desktop-menu" class="d-flex justify-content-end">
-                <ul class="font-size-20 text-bold">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#latest-works">Works</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <nav  id="desktop-menu" class="d-flex justify-content-end nav-menu">
+                <ul class="font-size-18 text-bold">
+                    <li><a id="about-link" href="#">About</a></li>
+                    <li><a id="works-link" href="#">Works</a></li>
+                    <li><a id="services-link" href="#">Services</a></li>
+                    <li><a id="contact-link" href="#">Contact</a></li>
                 </ul>
             </nav>
 
             <!--mobile view side nav menu-->
             <nav id="mobile-menu">                
-                <ul id="side-nav-menu" class="font-size-20 text-bold hide-menu">
+                <ul id="side-nav-menu" class="font-size-20 text-bold hide-menu nav-menu">
                     <p id="close-menu-icon">&times;</p>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#latest-works">Works</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                    <li><a id="about-link" href="#">About</a></li>
+                    <li><a id="works-link" href="#">Works</a></li>
+                    <li><a id="services-link" href="#">Services</a></li>
+                    <li><a id="contact-link" href="#">Contact</a></li>
                 </ul>
             </nav>
 
-            <div id="text">
+    <div id="text">
+                <!--The horizontal bar above the text:"Hi I'm Francis I'm a web developer"-->
                 <div></div>
-
+                <!--Hi I'm Francis-->
                 <div class="d-flex" id="first-row-of-text">
                 </div>
-                
+
+                <!--I'm a web developer-->
                 <div class="d-flex" id="second-row-of-text">
                 </div>
 
-                <a href="#about"><button type="button">Profile</button></a>
+                <a id="profile-btn" href="#"><button type="button">Profile</button></a>
             </div>
-            
-            <!--profile-image-->
-            <div id="profile-image">
-                <div style="width:100%;height:100%;">
-                    <img src="./assets/profile3.jpg" alt="" style="width: 100%;height: 100%;" class="rounded-circle border">
-                </div>
-            </div>
-            <!--profile-image-->
 
             <!--icon-column-->
             <div id="icon-column">
@@ -687,27 +705,25 @@
                     <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp font-size-20" aria-hidden="true"></i></a>              
                     <a href="https://github.com/duziem"><i class="fab fa-github font-size-20" aria-hidden="true"></i></a>
                     <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20" aria-hidden="true"></i></a>
-                    <!--<a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook font-size-20" aria-hidden="true"></i></a>-->
                     <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20" aria-hidden="true"></i> </a>        
                 </div>
                 <!--social icons-->
 
             </div>
             <!--icon-column-->
-        </div>        
+        </div>
+    
     </header>
     <!--Header Area-->
-
-
 
     <!--Latest works section containing an image grid showcasing latest works done-->
         <section id="latest-works">
             
-            <div class="container mt-5">
+            <div class="container" style="margin-top: 100px;">
                 <h2 class="font-theme color-gray">Latest Works</h2>
 
                 <!--Filter buttons-->
-                <div id="filters" class="button-group text-right font-size-16">
+                <div id="filters" class="button-group text-right font-size-16 mt-5">
                     <button class="btn is-checked font-theme color-gray" data-filter="*">All</button>
                     <button class="btn font-theme color-gray" data-filter=".web">Web Apps</button>
                     <button class="btn font-theme color-gray" data-filter=".mobile">Mobile Apps</button>
@@ -726,14 +742,6 @@
                             </div>
 
                         </div>
-                        <div class="grid-item mobile">
-                            <!--Beloxxi Employee Application-->
-                            <div class="img-box" id="beloxxi-app">
-                                <img src="./assets/beloxxiapp9.jpg" alt="mobile-app-thumbnail" width="100%">
-                                <div class="overlay" style="cursor: pointer;"></div>
-                                <a href="https://github.com/duziem/beloxxi-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Employee Management App</p></a>
-                            </div>
-                        </div>
 
                         <div class="grid-item web">
                             <!--The php user authentication application-->
@@ -741,6 +749,15 @@
                                 <img src="./assets/user app1.jpg" alt="web-form-thumbnail" width="100%">
                                 <div class="overlay" style="cursor: pointer;"></div>
                                 <a href="https://github.com/duziem/php-secure-user-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Secure User App</p></a>
+                            </div>
+                        </div>
+                        
+                        <div class="grid-item mobile">
+                            <!--Beloxxi Employee Application-->
+                            <div class="img-box" id="beloxxi-app">
+                                <img src="./assets/bil5.jpg" alt="mobile-app-thumbnail" width="100%">
+                                <div class="overlay" style="cursor: pointer;"></div>
+                                <a href="https://github.com/duziem/beloxxi-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Employee Management App</p></a>
                             </div>
                         </div>
 
@@ -752,17 +769,19 @@
                                 <a href="https://github.com/duziem/task-manager-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true"></i>Task Manager</p></a>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 
             </div>
+
         </section>
     <!--Latest works section containing an image grid showcasing latest works done-->
 
     <!--About section-->
     <section id="about" >
         <div class="container mt-5">
-            <div id="profile-card" class=" d-flex flex-column align-items-center p-4">
+            <div id="profile-card" class=" d-flex flex-column align-items-center p-4 shadow-light">
 
                 <!--Profile card image and calligraphy signature-->
                 <div style="width: 30vw; height: 30vw; background-color: white;" class="border">
@@ -870,21 +889,21 @@
             <div class="row">
                 <!--web services-->
                 <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fab fa-html5 color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
+                    <i class="fab fa-html5 mb-3 color-white" aria-hidden="true"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
                     <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of web solutions to businesses and organizations to enable them network with a global audience and enhance the appeal of product and services</p>
                 </div>
 
                 <!--mobile services-->
                 <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fab fa-android color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
+                    <i class="fab fa-android mb-3 color-white" aria-hidden="true"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
                     <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of mobile application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                 </div>
 
                 <!--desktop services-->
                 <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fas fa-laptop color-cadetblue mb-3" aria-hidden="true" style="font-size: 80px;"></i>
+                    <i class="fas fa-laptop mb-3 color-white" aria-hidden="true"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
                     <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of desktop application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                 </div>
@@ -894,27 +913,27 @@
     <!--services section-->
 
     <!--Footer Area-->
-    <footer id="contact" style="min-height: 200px;width: 100%;background: #2c3e50;margin-top: 100px;padding:30px 0">
+    <footer id="contact" style="min-height: 200px;width: 100%;background: #2c3e50;margin-top: 100px;padding:30px 0;">
         <div class="container">
             <div class="row w-100 pt-4">
-                <div class="col-md-4 offset-1 text-white">
-                    <p style="font-size: larger;margin:0">If you want to link up i'm always down for a cup of coffee <i class="fas fa-coffee"></i> .. let's connect</p></br>
-                    <p class="text-white font-theme"  style="font-size: 30px;margin:10px 0">Contact</p>
+                <div class="col-md-6 offset-1 text-white">
+                    <p style="font-size: larger;margin:0;">If you want to link up i'm always down for a cup of coffee <i class="fas fa-coffee"></i> .. let's connect</p></br>
+                    <p class="font-theme"  style="font-size: 36px;margin:10px 0">Contact</p>
                     <address>
-                        <i class="fas fa-envelope" aria-hidden="true"></i><a class="text-white" href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
-                        </br>
-                        <i class="fas fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591
-                        </br>
-                        <i class="fas fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Lagos, Nigeria
+                        <i class="fas fa-envelope" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i><a class="text-white" href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
+                        </br></br>
+                        <i class="fas fa-phone" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591
+                        </br></br>
+                        <i class="fas fa-home" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i>&nbsp;&nbsp;Lagos, Nigeria
                     </address>
                     
                 </div>
-                <div class="col-md-6 d-flex justify-content-center align-items-end">
-                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                <div class="col-md-4 d-flex justify-content-center align-items-end">
+                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
                     <!--<a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>-->
-                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href="https://github.com/duziem"><i class="fab fa-github color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
-                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin color-white font-size-20 m-4" aria-hidden="true" style="font-size: 30px;"></i></a>
+                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
+                    <a href="https://github.com/duziem"><i class="fab fa-github font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
+                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
                 </div>
     
             </div>
@@ -933,3 +952,4 @@
 <script src="index.js"></script>
 </body>
 </html>
+
