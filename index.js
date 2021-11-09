@@ -178,7 +178,7 @@ $("html,body").click(function(evt){
     }
 })
 
-/*This code section below is for the nav menu */
+/*This code section below is for the nav menu: scroll to the page content when the respective menu item is clicked  */
 //Begin
 
     $("#header .nav-menu #about-link").click(
@@ -240,7 +240,8 @@ $("#latest-works #beloxxi-app .overlay").click(function(){
     let slideType= "mobile-app-slideshow";
 
     /*caption for the Beloxxi App*/
-    let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter:the Dart framework. The app consists of: An income calculator which enables employees calculate their earnings; A profile screen which enables employees view the recent state of their profile in the company's database; An Info screen which enables an administrator upload content in order to circulate information to other employees via the app"};
+    let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter: https://github.com/duziem/beloxxi-app"};
+    //let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter:the Dart framework. The app consists of: An income calculator which enables employees calculate their earnings; A profile screen which enables employees view the recent state of their profile in the company's database; An Info screen which enables an administrator upload content in order to circulate information to other employees via the app"};
     setHtml(appImages, slideType, appCaption);
 })
 
@@ -249,7 +250,8 @@ $("#latest-works #ecommerce-app .overlay").click(function(){
 
     let appImages= ["./assets/pgh1.jpg","./assets/pgh2.jpg","./assets/pgh3.jpg","./assets/pgh4.jpg","./assets/pgh5.jpg"];
     let slideType= "web-app-slideshow";
-    let appCaption= {heading: "E-commerce Application",body: "This E-commerce Application is built on php. The App enables you to view gadgets that have been uploaded to the site, make orders, and checkout your orders, add to wishlist&add to cart. The App was made for Premium Gadget Gub: an SME that deals in Gadgets and Electornics"};//caption for the ecommerce app
+    let appCaption= {heading: "PHP E-commerce App",body: "https://github.com/duziem/php-ecommerce-app"};//caption for the ecommerce app
+    //let appCaption= {heading: "E-commerce Application",body: "This E-commerce Application is built on php. The App enables you to view gadgets that have been uploaded to the site, make orders, and checkout your orders, add to wishlist&add to cart. The App was made for Premium Gadget Gub: an SME that deals in Gadgets and Electornics"};//caption for the ecommerce app
     setHtml(appImages, slideType, appCaption);
 })
 
@@ -258,7 +260,7 @@ $("#latest-works #user-app .overlay").click(function(){
 
     let appImages= ["./assets/user app1.jpg","./assets/user app2.jpg","./assets/user app3.jpg","./assets/user app4.jpg"];
     let slideType= "web-app-slideshow";
-    let appCaption= {heading: "PHP Secure User App",body: ""}; //caption for the app
+    let appCaption= {heading: "PHP Secure User Form",body: ""}; //caption for the app
     setHtml(appImages, slideType, appCaption);
 })
 
@@ -308,13 +310,6 @@ function slideUpFunction(){
         //alert(services[0].getBoundingClientRect().top);
         services[0].style.visibility= "visible";
         services[0].classList.add("slideUp");
-        /*
-        var i;
-        for(i=0;i<services.length;i++){
-            services[i].style.visibility= "visible";
-            services[i].classList.add("slideUp");
-        }
-        */
     }
     if(document.body.scrollTop > 1520 || document.documentElement.scrollTop > 1520){
         var services= document.getElementsByClassName("services");
