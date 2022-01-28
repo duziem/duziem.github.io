@@ -132,10 +132,11 @@ if(skill.style.display == 'none'){
 
 /**profile skills section */
 
-/**Toggle between light and dark mode */
-$("#header").addClass(" color-white");
-$("body").addClass("theme-light");
+// Set the initial theme to dark and the color of the header to dark
+$("#header").addClass(" color-dark");
+$("body").addClass("theme-dark");
 
+/**Toggle between light and dark mode */
 $("#toggle-light-mode").click(function(event){
     /*
     $("body").css({"background": "url('./assets/anonym.png')", "background-repeat": "no-repeat",  "background-size": "cover", "background-position": "center center"});

@@ -650,9 +650,48 @@
 
         @media screen and (min-width: 1400px){
             #header {
-                background-size: 100vw;
+                background-size: 78vw;
                 /* background-position: bottom right; */
             }
+
+            #header #text{
+                left: 8%;
+            }
+
+            #header #text h1{
+                font-size: 84px;
+            }
+            #header #text h2{
+                font-size: 50px;
+            }
+            #header #text button{
+                width: 160px;
+                border-radius: 40px;
+                font-size: 28px;
+            }
+
+            #myServices .services i{
+                font-size: 140px;
+            }
+
+            #myServices .services p{
+                font-size: 19px;
+            }
+
+            /* #latest-works .grid{
+                width: 76%;
+            } */
+
+            /*latest works section*/
+            #latest-works .grid .grid-item .img-box{
+                width: 50vw;
+                /* height: 60vw; */
+            }
+
+            #header #desktop-menu ul{
+                font-size: 24px
+            }
+
         }
         /*** Media Queries ******/      
     </style>
@@ -796,7 +835,7 @@
     <!--About section-->
     <section id="about" >
         <div class="container mt-5">
-            <div id="profile-card" class=" d-flex flex-column align-items-center p-4 shadow-light">
+            <div id="profile-card" class=" d-flex flex-column align-items-center p-4 shadow-dark">
 
                 <!--Profile card image and calligraphy signature-->
                 <div style="width: 30vw; height: 30vw; background-color: white;" class="border">
@@ -851,6 +890,20 @@
                     </div>
 
                     <div class="mt-3">
+                        <p class="font-theme color-gray detail">React</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-eighty">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="font-theme color-gray detail">Node JS</p>
+                        <div class="skill-bar">
+                            <div class="progress-bar skill-eighty">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
                         <p class="font-theme color-gray detail">PHP</p>
                         <div class="skill-bar">
                             <div class="progress-bar skill-eighty">80%</div>
@@ -872,23 +925,9 @@
                     </div>
 
                     <div class="mt-3">
-                        <p class="font-theme color-gray detail">React</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-seventy">70%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
                         <p class="font-theme color-gray detail">Flutter</p>
                         <div class="skill-bar">
-                            <div class="progress-bar skill-sixty">60%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">React Native</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-sixty">60%</div>
+                            <div class="progress-bar skill-sixty">50%</div>
                         </div>
                     </div>
 
@@ -904,21 +943,21 @@
             <div class="row">
                 <!--web services-->
                 <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fab fa-html5 mb-3 color-white" aria-hidden="true"></i>
+                    <i class="fab fa-html5 mb-3 color-dark" aria-hidden="true"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
                     <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of web solutions to businesses and organizations to enable them network with a global audience and enhance the appeal of product and services</p>
                 </div>
 
                 <!--mobile services-->
                 <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fab fa-android mb-3 color-white" aria-hidden="true"></i>
+                    <i class="fab fa-android mb-3 color-dark" aria-hidden="true"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
                     <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of mobile application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                 </div>
 
                 <!--desktop services-->
                 <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fas fa-laptop mb-3 color-white" aria-hidden="true"></i>
+                    <i class="fas fa-laptop mb-3 color-dark" aria-hidden="true"></i>
                     <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
                     <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of desktop application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                 </div>
@@ -931,7 +970,7 @@
     <footer id="contact" style="min-height: 200px;width: 100%;background: #2c3e50;margin-top: 100px;padding:30px 0;">
         <div class="container">
             <div class="row w-100 pt-4">
-                <div class="col-md-6 offset-1 text-white">
+                <div class="col-md-6 text-white">
                     <p style="font-size: larger;margin:0;">If you want to link up i'm always down for a cup of coffee <i class="fas fa-coffee"></i> .. let's connect</p></br>
                     <p class="font-theme"  style="font-size: 36px;margin:10px 0">Contact</p>
                     <address>
