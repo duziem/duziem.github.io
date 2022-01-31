@@ -1,5 +1,7 @@
+$('#view').css({'display': 'none'});
 $(document).ready(function(){
-
+    $('#loader').css({'display': 'none'});
+    $('#view').css({'display': 'block'});
 /** create a typewriter animation for the welcome text-- Hi i'm Francis... */
 function typewriter(text, i, textRowIndex, callBackFn, currentText){
 
@@ -248,59 +250,60 @@ $("#latest-works #beloxxi-app .overlay").click(function(){
 
 /*on clicking the image referring to the ecommerce app*/
 $("#latest-works #ecommerce-app .overlay").click(function(){
-
-    let appImages= ["./assets/pgh1.jpg","./assets/pgh2.jpg","./assets/pgh3.jpg","./assets/pgh4.jpg","./assets/pgh5.jpg"];
-    let slideType= "web-app-slideshow";
-    let appCaption= {heading: "PHP E-commerce App",body: "https://github.com/duziem/php-ecommerce-app"};//caption for the ecommerce app
-    //let appCaption= {heading: "E-commerce Application",body: "This E-commerce Application is built on php. The App enables you to view gadgets that have been uploaded to the site, make orders, and checkout your orders, add to wishlist&add to cart. The App was made for Premium Gadget Gub: an SME that deals in Gadgets and Electornics"};//caption for the ecommerce app
-    setHtml(appImages, slideType, appCaption);
+    // window.location.href= "./pages/ecommerce-app.html"
+    window.open('./pages/ecommerce-app.html', '_blank');
+    // let appImages= ["./assets/pgh1.jpg","./assets/pgh2.jpg","./assets/pgh3.jpg","./assets/pgh4.jpg","./assets/pgh5.jpg"];
+    // let slideType= "web-app-slideshow";
+    // let appCaption= {heading: "PHP E-commerce App",body: "https://github.com/duziem/php-ecommerce-app"};//caption for the ecommerce app
+    // //let appCaption= {heading: "E-commerce Application",body: "This E-commerce Application is built on php. The App enables you to view gadgets that have been uploaded to the site, make orders, and checkout your orders, add to wishlist&add to cart. The App was made for Premium Gadget Gub: an SME that deals in Gadgets and Electornics"};//caption for the ecommerce app
+    // setHtml(appImages, slideType, appCaption);
 })
 
 /*on clicking the image referring to the php secure user app*/
 $("#latest-works #user-app .overlay").click(function(){
 
-    let appImages= ["./assets/user app1.jpg","./assets/user app2.jpg","./assets/user app3.jpg","./assets/user app4.jpg"];
-    let slideType= "web-app-slideshow";
-    let appCaption= {heading: "PHP Secure User Form",body: ""}; //caption for the app
-    setHtml(appImages, slideType, appCaption);
+    // let appImages= ["./assets/user app1.jpg","./assets/user app2.jpg","./assets/user app3.jpg","./assets/user app4.jpg"];
+    // let slideType= "web-app-slideshow";
+    // let appCaption= {heading: "PHP Secure User Form",body: ""}; //caption for the app
+    // setHtml(appImages, slideType, appCaption);
 })
 
-function setHtml(appImages, slideType, appCaption){
-    let overlayContent= '<span id="close-fullscreen-overlay" style="font-size:80px;position:absolute;top:3;right:5vw;color:white;cursor:pointer;width: 80px;height: 80px;">&times;</span><div style="display: flex;align-items: center;justify-content: center;height: 100%;width:100%;"><div id="' + slideType + '" class="carousel slide" data-ride="carousel"><div class="row"><div class="carousel-inner col-8 offset-2 w-100 p-0">';
-    for(let i=0;i<appImages.length;i++){
-        if(i == 0){
-            overlayContent += '<div class="carousel-item active"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
-            continue;
-        }
-        overlayContent += '<div class="carousel-item"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
+// function setHtml(appImages, slideType, appCaption){
+//     let overlayContent= '<span id="close-fullscreen-overlay" style="font-size:80px;position:absolute;top:3;right:5vw;color:white;cursor:pointer;width: 80px;height: 80px;">&times;</span><div style="display: flex;align-items: center;justify-content: center;height: 100%;width:100%;"><div id="' + slideType + '" class="carousel slide" data-ride="carousel"><div class="row"><div class="carousel-inner col-8 offset-2 w-100 p-0">';
+//     for(let i=0;i<appImages.length;i++){
+//         if(i == 0){
+//             overlayContent += '<div class="carousel-item active"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
+//             continue;
+//         }
+//         overlayContent += '<div class="carousel-item"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
     
-    }
-    overlayContent += '</div></div><a class="carousel-control-prev" href="#' + slideType + '" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#' + slideType + '" data-slide="next"><span class="carousel-control-next-icon"></span></a></div></div><div id="app-caption" class="text-white" style="position:absolute;bottom:0;left:10vw;"><h4>' + appCaption.heading + '</h4><p>' + appCaption.body + '</p></div>';
+//     }
+//     overlayContent += '</div></div><a class="carousel-control-prev" href="#' + slideType + '" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#' + slideType + '" data-slide="next"><span class="carousel-control-next-icon"></span></a></div></div><div id="app-caption" class="text-white" style="position:absolute;bottom:0;left:10vw;"><h4>' + appCaption.heading + '</h4><p>' + appCaption.body + '</p></div>';
 
-    $("#fullscreen-overlay").html(
-        overlayContent
-    )
+//     $("#fullscreen-overlay").html(
+//         overlayContent
+//     )
 
-    //$('body').css('position', 'fixed'); //make the entire document fixed in order to prevent scrolling when the overlay is open
+//     //$('body').css('position', 'fixed'); //make the entire document fixed in order to prevent scrolling when the overlay is open
 
-    displayFullScreenOverlay(); //display the full screen overlay with the new html content
+//     displayFullScreenOverlay(); //display the full screen overlay with the new html content
 
-    closeFullScreenOverlay(); //close the full screen overlay
-}
+//     closeFullScreenOverlay(); //close the full screen overlay
+// }
 
-/*display the full screen overlay*/
-function displayFullScreenOverlay(){
-    $("#fullscreen-overlay").css("display","block"); 
-}
+// /*display the full screen overlay*/
+// function displayFullScreenOverlay(){
+//     $("#fullscreen-overlay").css("display","block"); 
+// }
 
-/*close the full screen overlay*/
-function closeFullScreenOverlay(){
-    $("#close-fullscreen-overlay").click(function(){4
-        $("#fullscreen-overlay").css("display","none"); //remove the overlay from view
-        $("#fullscreen-overlay").html(); //clear the contents of the overlay
-        $('body').css('position', 'static'); // make the document scrollable again
-    })
-}
+// /*close the full screen overlay*/
+// function closeFullScreenOverlay(){
+//     $("#close-fullscreen-overlay").click(function(){4
+//         $("#fullscreen-overlay").css("display","none"); //remove the overlay from view
+//         $("#fullscreen-overlay").html(); //clear the contents of the overlay
+//         $('body').css('position', 'static'); // make the document scrollable again
+//     })
+// }
 
 
 /*slide the 3 elements that display my services upwards one after the other when the window is scrolled to that section of the document*/

@@ -698,302 +698,308 @@
     
 </head>
 <body>
-    <!--Place the overlay showcasing the apps designed here-->
-    <div id="fullscreen-overlay"></div>
-
-    <!--Header Area-->
-    <header>
-        <div style="position: fixed;width: 80px;height: 60px;margin: 5px 10px;z-index:1000">
-            <a id="site-logo" href="#"><img src="./assets/mylogo.svg" alt="portfolio-logo" width="100%" height="100%"></a>
-        </div>
-        
-        <div id="header">
-             <!--desktop view inline nav menu-->
-            <nav  id="desktop-menu" class="d-flex justify-content-end nav-menu">
-                <ul class="font-size-18 text-bold">
-                    <li><a id="about-link" href="#">About</a></li>
-                    <li><a id="works-link" href="#">Works</a></li>
-                    <li><a id="services-link" href="#">Services</a></li>
-                    <li><a id="contact-link" href="#">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!--mobile view side nav menu-->
-            <nav id="mobile-menu">                
-                <ul id="side-nav-menu" class="font-size-20 text-bold hide-menu nav-menu">
-                    <p id="close-menu-icon">&times;</p>
-                    <li><a id="about-link" href="#">About</a></li>
-                    <li><a id="works-link" href="#">Works</a></li>
-                    <li><a id="services-link" href="#">Services</a></li>
-                    <li><a id="contact-link" href="#">Contact</a></li>
-                </ul>
-            </nav>
-
-    <div id="text">
-                <!--The horizontal bar above the text:"Hi I'm Francis I'm a web developer"-->
-                <div></div>
-                <!--Hi I'm Francis-->
-                <div class="d-flex" id="first-row-of-text">
-                </div>
-
-                <!--I'm a web developer-->
-                <div class="d-flex" id="second-row-of-text">
-                </div>
-
-                <a id="profile-btn" href="#"><button type="button">Profile</button></a>
-            </div>
-
-            <!--icon-column-->
-            <div id="icon-column">
-
-                <!--menu icon-->
-                <div id="menu-icon" class="menuIcon">
-                    <i class="fa fa-list" aria-hidden="true"></i>
-                </div>
-                
-                <!--social icons-->
-                <div id="icons"> 
-                    <div>
-                        <i class="fas fa-adjust font-size-20" id="toggle-light-mode" aria-hidden="true"></i> 
-                        <p style="line-height: 0.8em;pointer-events: none;font-family: montserrat;">night mode</p>
-                    </div> 
-                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp font-size-20" aria-hidden="true"></i></a>              
-                    <a href="https://github.com/duziem"><i class="fab fa-github font-size-20" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20" aria-hidden="true"></i> </a>        
-                </div>
-                <!--social icons-->
-
-            </div>
-            <!--icon-column-->
-        </div>
+    <div id="loader" style="width: 100%; height: 100vw; overflow: hidden;">
+        <img src="./assets/spinner.gif" alt="" width="100%" height="50%" style="background-size: contain;">
+    </div>
+    <div id="view">
+        <!--Place the overlay showcasing the apps designed here-->
+        <div id="fullscreen-overlay"></div>
     
-    </header>
-    <!--Header Area-->
-
-    <!--Latest works section containing an image grid showcasing latest works done-->
-        <section id="latest-works">
+        <!--Header Area-->
+        <header>
+            <div style="position: fixed;width: 80px;height: 60px;margin: 5px 10px;z-index:1000">
+                <a id="site-logo" href="#"><img src="./assets/mylogo.svg" alt="portfolio-logo" width="100%" height="100%"></a>
+            </div>
             
-            <div class="container" style="margin-top: 100px;">
-                <h2 class="font-theme color-gray">Latest Works</h2>
-
-                <!--Filter buttons-->
-                <div id="filters" class="button-group text-right font-size-16 mt-5">
-                    <button class="btn is-checked font-theme color-gray" data-filter="*">All</button>
-                    <button class="btn font-theme color-gray" data-filter=".web">Web Apps</button>
-                    <button class="btn font-theme color-gray" data-filter=".mobile">Mobile Apps</button>
-                    <button class="btn font-theme color-gray" data-filter=".others">Others</button>
-                </div>
-                <!--Filter buttons-->
-
-                <div id="grid-align" class="row justify-content-center">
-                    <div class="grid">
-                        <div class="grid-item web">
-                            <!--F&R immigration website-->
-                            <div class="img-box" id="immigration-app">
-                                <img src="./assets/immigration-website.jpg" alt="immigration-app-thumbnail" width="100%" height="100%" >
-                                <div class="overlay" style="cursor: pointer;"></div>
-                                <a href="https://sample-immigration.000webhostapp.com"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>F&R immigration Site</p></a>
-                            </div>
-                        </div>
-
-                        <div class="grid-item web">
-                            <!--Ecommerce application: Premium gadget hub-->
-                            <div class="img-box" id="ecommerce-app">
-                                <img src="./assets/pgh6.jpg" alt="ecommerce-app-thumbnail" width="100%" height="100%" >
-                                <div class="overlay" style="cursor: pointer;"></div>
-                                <a href="https://github.com/duziem/php-ecommerce-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Ecommerce App</p></a>
-                            </div>
-                        </div>
-
-                        <div class="grid-item web">
-                            <!--The php user authentication application-->
-                            <div class="img-box" id="user-app">
-                                <img src="./assets/user app1.jpg" alt="web-form-thumbnail" width="100%" height="100%" >
-                                <div class="overlay" style="cursor: pointer;"></div>
-                                <a href="https://github.com/duziem/php-secure-user-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Secure User App</p></a>
-                            </div>
-                        </div>
-                        
-                        <div class="grid-item mobile">
-                            <!--Beloxxi Employee Application-->
-                            <div class="img-box" id="beloxxi-app">
-                                <img src="./assets/bil5.jpg" alt="mobile-app-thumbnail" width="100%" height="100%" >
-                                <div class="overlay" style="cursor: pointer;"></div>
-                                <a href="https://github.com/duziem/beloxxi-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Employee Management App</p></a>
-                            </div>
-                        </div>
-
+            <div id="header">
+                 <!--desktop view inline nav menu-->
+                <nav  id="desktop-menu" class="d-flex justify-content-end nav-menu">
+                    <ul class="font-size-18 text-bold">
+                        <li><a id="about-link" href="#">About</a></li>
+                        <li><a id="works-link" href="#">Works</a></li>
+                        <li><a id="services-link" href="#">Services</a></li>
+                        <li><a id="contact-link" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+    
+                <!--mobile view side nav menu-->
+                <nav id="mobile-menu">                
+                    <ul id="side-nav-menu" class="font-size-20 text-bold hide-menu nav-menu">
+                        <p id="close-menu-icon">&times;</p>
+                        <li><a id="about-link" href="#">About</a></li>
+                        <li><a id="works-link" href="#">Works</a></li>
+                        <li><a id="services-link" href="#">Services</a></li>
+                        <li><a id="contact-link" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+    
+        <div id="text">
+                    <!--The horizontal bar above the text:"Hi I'm Francis I'm a web developer"-->
+                    <div></div>
+                    <!--Hi I'm Francis-->
+                    <div class="d-flex" id="first-row-of-text">
                     </div>
-                </div>
-                
-            </div>
-
-        </section>
-    <!--Latest works section containing an image grid showcasing latest works done-->
-
-    <!--About section-->
-    <section id="about" >
-        <div class="container mt-5">
-            <div id="profile-card" class=" d-flex flex-column align-items-center p-4 shadow-dark">
-
-                <!--Profile card image and calligraphy signature-->
-                <div style="width: 30vw; height: 30vw; background-color: white;" class="border">
-                    <img src="./assets/profile003.jpg" alt="" width="100%" height="86%" style="object-fit: cover;">
-
-                    <!--calligraphy signature-->
-                    <div class="p-1">
-                        <h4 style="font-family: 'Pacifico', cursive;font-size: 2vw;">
-                            Nnaemezie Francis Okeke
-                        </h4>
+    
+                    <!--I'm a web developer-->
+                    <div class="d-flex" id="second-row-of-text">
                     </div>
-                </div>
-                <!--Profile card image and calligraphy signature-->
-
-                <!--Profile Details-->
-                <div class="w-100 detail">
-                    <div class="mt-5 color-gray" style="font-family: 'montserrat';"><i class="fas fa-user color-cadetblue"></i>&nbsp;&nbsp;Nnaemezie Francis Okeke</div>
-                    <div class="mt-3 color-gray" style="font-family: 'montserrat';"><i class="fas fa-toolbox color-cadetblue"></i>&nbsp;&nbsp;Full Stack Developer</div>
-                    <div class="mt-3 color-gray" style="font-family: 'montserrat';"><i class="fas fa-envelope info color-cadetblue"></i>&nbsp;&nbsp;nnaemezie.okeke@gmail.com</div>
-                    <div class="mt-3 color-gray" style="font-family: 'montserrat';font-style: italic;"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591</div>
-                    
-                </div>
-                 <!-- profile toggle button-->
-                    
-                    <span id="profile-toggle-btn">
-                        <i class="fas fa-chevron-down color-cadetblue" aria-hidden="true"></i>
-                    </span>
-                    
-                <hr class="w-100">
-                <!--Skills Section-->
-                <div class="w-100" id="skills-section">
-                    <div class="mt-3 detail font-theme color-gray"><i class="fas fa-asterisk info color-cadetblue"></i>&nbsp;Skills</div>
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">HTML</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-ninety">90%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">CSS</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-ninety">90%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">JAVASCRIPT</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-eighty">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">React</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-eighty">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">Node JS</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-eighty">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">PHP</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-eighty">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">SQL</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-eighty">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">Python</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-seventy">70%</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-theme color-gray detail">Flutter</p>
-                        <div class="skill-bar">
-                            <div class="progress-bar skill-sixty">50%</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>                
-        </div>
-    </section>
-    <!--About section-->
-
-    <!--services section-->
-    <section id="myServices" style="margin-top: 100px;">
-        <div class="container mt-5">
-            <div class="row">
-                <!--web services-->
-                <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fab fa-html5 mb-3 color-dark" aria-hidden="true"></i>
-                    <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
-                    <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of web solutions to businesses and organizations to enable them network with a global audience and enhance the appeal of product and services</p>
-                </div>
-
-                <!--mobile services-->
-                <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fab fa-android mb-3 color-dark" aria-hidden="true"></i>
-                    <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
-                    <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of mobile application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
-                </div>
-
-                <!--desktop services-->
-                <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
-                    <i class="fas fa-laptop mb-3 color-dark" aria-hidden="true"></i>
-                    <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
-                    <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of desktop application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
-                </div>
-            </div>
-        </div>
-    </section></br></br>
-    <!--services section-->
-
-    <!--Footer Area-->
-    <footer id="contact" style="min-height: 200px;width: 100%;background: #2c3e50;margin-top: 100px;padding:30px 0;">
-        <div class="container">
-            <div class="row w-100 pt-4">
-                <div class="col-md-6 text-white">
-                    <p style="font-size: larger;margin:0;">If you want to link up i'm always down for a cup of coffee <i class="fas fa-coffee"></i> .. let's connect</p></br>
-                    <p class="font-theme"  style="font-size: 36px;margin:10px 0">Contact</p>
-                    <address>
-                        <i class="fas fa-envelope" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i><a class="text-white" href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
-                        </br></br>
-                        <i class="fas fa-phone" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591
-                        </br></br>
-                        <i class="fas fa-home" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i>&nbsp;&nbsp;Lagos, Nigeria
-                    </address>
-                    
-                </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-end">
-                    <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
-                    <!--<a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>-->
-                    <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
-                    <a href="https://github.com/duziem"><i class="fab fa-github font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
-                    <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
+    
+                    <a id="profile-btn" href="#"><button type="button">Profile</button></a>
                 </div>
     
+                <!--icon-column-->
+                <div id="icon-column">
+    
+                    <!--menu icon-->
+                    <div id="menu-icon" class="menuIcon">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                    </div>
+                    
+                    <!--social icons-->
+                    <div id="icons"> 
+                        <div>
+                            <i class="fas fa-adjust font-size-20" id="toggle-light-mode" aria-hidden="true"></i> 
+                            <p style="line-height: 0.8em;pointer-events: none;font-family: montserrat;">night mode</p>
+                        </div> 
+                        <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp font-size-20" aria-hidden="true"></i></a>              
+                        <a href="https://github.com/duziem"><i class="fab fa-github font-size-20" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20" aria-hidden="true"></i> </a>        
+                    </div>
+                    <!--social icons-->
+    
+                </div>
+                <!--icon-column-->
             </div>
-        </div>
+        
+        </header>
+        <!--Header Area-->
+    
+        <!--Latest works section containing an image grid showcasing latest works done-->
+            <section id="latest-works">
+                
+                <div class="container" style="margin-top: 100px;">
+                    <h2 class="font-theme color-gray">Latest Works</h2>
+    
+                    <!--Filter buttons-->
+                    <div id="filters" class="button-group text-right font-size-16 mt-5">
+                        <button class="btn is-checked font-theme color-gray" data-filter="*">All</button>
+                        <button class="btn font-theme color-gray" data-filter=".web">Web Apps</button>
+                        <button class="btn font-theme color-gray" data-filter=".mobile">Mobile Apps</button>
+                        <button class="btn font-theme color-gray" data-filter=".others">Others</button>
+                    </div>
+                    <!--Filter buttons-->
+    
+                    <div id="grid-align" class="row justify-content-center">
+                        <div class="grid">
+                            <div class="grid-item web">
+                                <!--F&R immigration website-->
+                                <div class="img-box" id="immigration-app">
+                                    <img src="./assets/immigration-website.jpg" alt="immigration-app-thumbnail" width="100%" height="100%" >
+                                    <div class="overlay" style="cursor: pointer;"></div>
+                                    <a href="https://sample-immigration.000webhostapp.com"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>F&R immigration Site</p></a>
+                                </div>
+                            </div>
+    
+                            <div class="grid-item web">
+                                <!--Ecommerce application: Premium gadget hub-->
+                                <div class="img-box" id="ecommerce-app">
+                                    <img src="./assets/pgh6.jpg" alt="ecommerce-app-thumbnail" width="100%" height="100%" >
+                                    <div class="overlay" style="cursor: pointer;"></div>
+                                    <a href="https://github.com/duziem/php-ecommerce-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Ecommerce App</p></a>
+                                </div>
+                            </div>
+    
+                            <div class="grid-item web">
+                                <!--The php user authentication application-->
+                                <div class="img-box" id="user-app">
+                                    <img src="./assets/user app1.jpg" alt="web-form-thumbnail" width="100%" height="100%" >
+                                    <div class="overlay" style="cursor: pointer;"></div>
+                                    <a href="https://github.com/duziem/php-secure-user-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Secure User App</p></a>
+                                </div>
+                            </div>
+                            
+                            <div class="grid-item mobile">
+                                <!--Beloxxi Employee Application-->
+                                <div class="img-box" id="beloxxi-app">
+                                    <img src="./assets/bil5.jpg" alt="mobile-app-thumbnail" width="100%" height="100%" >
+                                    <div class="overlay" style="cursor: pointer;"></div>
+                                    <a href="https://github.com/duziem/beloxxi-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Employee Management App</p></a>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    
+                </div>
+    
+            </section>
+        <!--Latest works section containing an image grid showcasing latest works done-->
+    
+        <!--About section-->
+        <section id="about" >
+            <div class="container mt-5">
+                <div id="profile-card" class=" d-flex flex-column align-items-center p-4 shadow-dark">
+    
+                    <!--Profile card image and calligraphy signature-->
+                    <div style="width: 30vw; height: 30vw; background-color: white;" class="border">
+                        <img src="./assets/profile003.jpg" alt="" width="100%" height="86%" style="object-fit: cover;">
+    
+                        <!--calligraphy signature-->
+                        <div class="p-1">
+                            <h4 style="font-family: 'Pacifico', cursive;font-size: 2vw;">
+                                Nnaemezie Francis Okeke
+                            </h4>
+                        </div>
+                    </div>
+                    <!--Profile card image and calligraphy signature-->
+    
+                    <!--Profile Details-->
+                    <div class="w-100 detail">
+                        <div class="mt-5 color-gray" style="font-family: 'montserrat';"><i class="fas fa-user color-cadetblue"></i>&nbsp;&nbsp;Nnaemezie Francis Okeke</div>
+                        <div class="mt-3 color-gray" style="font-family: 'montserrat';"><i class="fas fa-toolbox color-cadetblue"></i>&nbsp;&nbsp;Full Stack Developer</div>
+                        <div class="mt-3 color-gray" style="font-family: 'montserrat';"><i class="fas fa-envelope info color-cadetblue"></i>&nbsp;&nbsp;nnaemezie.okeke@gmail.com</div>
+                        <div class="mt-3 color-gray" style="font-family: 'montserrat';font-style: italic;"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591</div>
+                        
+                    </div>
+                     <!-- profile toggle button-->
+                        
+                        <span id="profile-toggle-btn">
+                            <i class="fas fa-chevron-down color-cadetblue" aria-hidden="true"></i>
+                        </span>
+                        
+                    <hr class="w-100">
+                    <!--Skills Section-->
+                    <div class="w-100" id="skills-section">
+                        <div class="mt-3 detail font-theme color-gray"><i class="fas fa-asterisk info color-cadetblue"></i>&nbsp;Skills</div>
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">HTML</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-ninety">90%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">CSS</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-ninety">90%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">JAVASCRIPT</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-eighty">80%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">React</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-eighty">80%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">Node JS</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-eighty">80%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">PHP</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-eighty">80%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">SQL</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-eighty">80%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">Python</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-seventy">70%</div>
+                            </div>
+                        </div>
+    
+                        <div class="mt-3">
+                            <p class="font-theme color-gray detail">Flutter</p>
+                            <div class="skill-bar">
+                                <div class="progress-bar skill-sixty">50%</div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>                
+            </div>
+        </section>
+        <!--About section-->
+    
+        <!--services section-->
+        <section id="myServices" style="margin-top: 100px;">
+            <div class="container mt-5">
+                <div class="row">
+                    <!--web services-->
+                    <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
+                        <i class="fab fa-html5 mb-3 color-dark" aria-hidden="true"></i>
+                        <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
+                        <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of web solutions to businesses and organizations to enable them network with a global audience and enhance the appeal of product and services</p>
+                    </div>
+    
+                    <!--mobile services-->
+                    <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
+                        <i class="fab fa-android mb-3 color-dark" aria-hidden="true"></i>
+                        <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
+                        <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of mobile application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
+                    </div>
+    
+                    <!--desktop services-->
+                    <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
+                        <i class="fas fa-laptop mb-3 color-dark" aria-hidden="true"></i>
+                        <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
+                        <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of desktop application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
+                    </div>
+                </div>
+            </div>
+        </section></br></br>
+        <!--services section-->
+    
+        <!--Footer Area-->
+        <footer id="contact" style="min-height: 200px;width: 100%;background: #2c3e50;margin-top: 100px;padding:30px 0;">
+            <div class="container">
+                <div class="row w-100 pt-4">
+                    <div class="col-md-6 text-white">
+                        <p style="font-size: larger;margin:0;">If you want to link up i'm always down for a cup of coffee <i class="fas fa-coffee"></i> .. let's connect</p></br>
+                        <p class="font-theme"  style="font-size: 36px;margin:10px 0">Contact</p>
+                        <address>
+                            <i class="fas fa-envelope" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i><a class="text-white" href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
+                            </br></br>
+                            <i class="fas fa-phone" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591
+                            </br></br>
+                            <i class="fas fa-home" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i>&nbsp;&nbsp;Lagos, Nigeria
+                        </address>
+                        
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center align-items-end">
+                        <a href="https://wa.me/+2347054820591?text=I'm%20interested%20in%20doing%20business%20with%20you"><i class="fab fa-whatsapp m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
+                        <!--<a href="https://web.facebook.com/frankenstein.okeke"><i class="fab fa-facebook color-white m-4" aria-hidden="true" style="font-size: 30px;"></i></a>-->
+                        <a href="https://twitter.com/codedmindz"><i class="fab fa-twitter font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
+                        <a href="https://github.com/duziem"><i class="fab fa-github font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
+                        <a href="https://www.linkedin.com/in/nnaemezie-okeke-9433301b0/"><i class="fab fa-linkedin font-size-20 m-4" aria-hidden="true" style="color: #2c3e50;font-size: 40px;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i></a>
+                    </div>
+        
+                </div>
+            </div>
+    
+        </footer>
 
-    </footer>
+    </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
