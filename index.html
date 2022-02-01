@@ -32,6 +32,7 @@
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing:grayscale;
+            overflow-y: hidden;
         }
 
         /*** customized classes *****/
@@ -448,7 +449,7 @@
         }
 
         #myServices .services{
-            visibility: hidden;
+            /* visibility: hidden; */
             padding: 0;
             margin: 0;
         }
@@ -698,7 +699,7 @@
     
 </head>
 <body>
-    <div id="loader" style="width: 100%; height: 100vh; overflow: hidden;">
+    <div id="loader" style="width: 100%; height: 100vh; overflow: hidden; z-index: 8000000000; position: fixed; left: 0; top: 0">
         <img src="./assets/spinner.gif" alt="" width="100%" height="100%" style="background-size: cover;">
     </div>
     <div id="view">

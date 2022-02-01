@@ -1,7 +1,8 @@
-$('#view').css({'visibility': 'hidden'});
+$('#view').css({'visibility': 'hidden'}); // set the document visibility to hidden when the document is not yet ready
 $(document).ready(function(){
     $('#loader').css({'display': 'none'});
     $('#view').css({'visibility': 'visible'});
+    $('body').css({ 'overflow-y': 'visible'});
 /** create a typewriter animation for the welcome text-- Hi i'm Francis... */
 function typewriter(text, i, textRowIndex, callBackFn, currentText){
 
@@ -315,17 +316,17 @@ function slideUpFunction(){
     if(document.body.scrollTop >= 1360 || document.documentElement.scrollTop >= 1360){
         var services= document.getElementsByClassName("services");
         //alert(services[0].getBoundingClientRect().top);
-        services[0].style.visibility= "visible";
+        // services[0].style.visibility= "visible";
         services[0].classList.add("slideUp");
     }
     if(document.body.scrollTop > 1520 || document.documentElement.scrollTop > 1520){
         var services= document.getElementsByClassName("services");
-        services[1].style.visibility= "visible";
+        // services[1].style.visibility= "visible";
         services[1].classList.add("slideUp");
     }
     if(document.body.scrollTop >= 1620 || document.documentElement.scrollTop >= 1620){
         var services= document.getElementsByClassName("services");
-        services[2].style.visibility= "visible";
+        // services[2].style.visibility= "visible";
         services[2].classList.add("slideUp");
         
     }
