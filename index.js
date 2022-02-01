@@ -1,7 +1,7 @@
-$('#view').css({'display': 'none'});
+$('#view').css({'visibility': 'hidden'});
 $(document).ready(function(){
     $('#loader').css({'display': 'none'});
-    $('#view').css({'display': 'block'});
+    $('#view').css({'visibility': 'visible'});
 /** create a typewriter animation for the welcome text-- Hi i'm Francis... */
 function typewriter(text, i, textRowIndex, callBackFn, currentText){
 
@@ -136,15 +136,15 @@ if(skill.style.display == 'none'){
 
 // Set the initial theme to dark and the color of the header to dark
 $("#header").addClass(" color-dark");
-$("body").addClass("theme-dark");
+$("#view").addClass("theme-dark");
 
 /**Toggle between light and dark mode */
 $("#toggle-light-mode").click(function(event){
     /*
     $("body").css({"background": "url('./assets/anonym.png')", "background-repeat": "no-repeat",  "background-size": "cover", "background-position": "center center"});
     */
-    $("body").toggleClass("theme-light");
-    $("body").toggleClass("theme-dark");
+    $("#view").toggleClass("theme-light");
+    $("#view").toggleClass("theme-dark");
     $("#header").toggleClass("color-white");
     $("#header").toggleClass("color-dark");
     $("#myServices .services i").toggleClass("color-white");
@@ -239,24 +239,27 @@ $("html,body").click(function(evt){
 /*on clicking the image referring to the beloxxi mobile app*/
 $("#latest-works #beloxxi-app .overlay").click(function(){
 
-    let appImages= ["./assets/beloxxiapp1.jpg","./assets/beloxxiapp2.jpg","./assets/beloxxiapp3.jpg","./assets/beloxxiapp4.jpg","./assets/beloxxiapp5.jpg","./assets/beloxxiapp6.jpg","./assets/beloxxiapp7.jpg","./assets/beloxxiapp8.jpg","./assets/beloxxiapp0.jpg"];
-    let slideType= "mobile-app-slideshow";
+    // let appImages= ["./assets/beloxxiapp1.jpg","./assets/beloxxiapp2.jpg","./assets/beloxxiapp3.jpg","./assets/beloxxiapp4.jpg","./assets/beloxxiapp5.jpg","./assets/beloxxiapp6.jpg","./assets/beloxxiapp7.jpg","./assets/beloxxiapp8.jpg","./assets/beloxxiapp0.jpg"];
+    // let slideType= "mobile-app-slideshow";
 
     /*caption for the Beloxxi App*/
-    let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter: https://github.com/duziem/beloxxi-app"};
+    // let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter: https://github.com/duziem/beloxxi-app"};
     //let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter:the Dart framework. The app consists of: An income calculator which enables employees calculate their earnings; A profile screen which enables employees view the recent state of their profile in the company's database; An Info screen which enables an administrator upload content in order to circulate information to other employees via the app"};
-    setHtml(appImages, slideType, appCaption);
+    // setHtml(appImages, slideType, appCaption);
 })
 
 /*on clicking the image referring to the ecommerce app*/
 $("#latest-works #ecommerce-app .overlay").click(function(){
     // window.location.href= "./pages/ecommerce-app.html"
-    window.open('./pages/ecommerce-app.html', '_blank');
+    window.open('./pages/ecommerce-app/ecommerce-app.html', '_blank');
     // let appImages= ["./assets/pgh1.jpg","./assets/pgh2.jpg","./assets/pgh3.jpg","./assets/pgh4.jpg","./assets/pgh5.jpg"];
     // let slideType= "web-app-slideshow";
     // let appCaption= {heading: "PHP E-commerce App",body: "https://github.com/duziem/php-ecommerce-app"};//caption for the ecommerce app
     // //let appCaption= {heading: "E-commerce Application",body: "This E-commerce Application is built on php. The App enables you to view gadgets that have been uploaded to the site, make orders, and checkout your orders, add to wishlist&add to cart. The App was made for Premium Gadget Gub: an SME that deals in Gadgets and Electornics"};//caption for the ecommerce app
     // setHtml(appImages, slideType, appCaption);
+})
+$("#latest-works #github-finder .overlay").click(function(){
+    window.open('./pages/github-finder/github-finder.html', '_blank');
 })
 
 /*on clicking the image referring to the php secure user app*/
