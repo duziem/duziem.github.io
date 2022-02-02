@@ -17,12 +17,10 @@ function typewriter(text, i, textRowIndex, callBackFn, currentText){
         }
 
         if(textRowIndex == 0){
-            
             currentText += "<span class='color-" + text[i].color + "'><h1>" + text[i].text + space + "</h1></span>"; // update the current text-- here the h1 element is used
             let firstRow= document.getElementById('first-row-of-text'); //get the first row of text container
             firstRow.innerHTML= `${currentText}<span class="blinking-insert-line color-gray"></span>`;
             //$('#first-row-of-text').html(`<span class=${text[i].color}><h1>${currentText + space}</h1></span><span id="blinking-insert-line"></span>`);
-        
         }else if(textRowIndex == 1){
             currentText += "<span class='color-" + text[i].color + "'><h2>" + text[i].text + space + "</h2></span>"; // update the current text-- here the h2 element is used
             let secondRow= document.getElementById('second-row-of-text');//get the second row of text container
@@ -58,7 +56,6 @@ function startAnimation(i){
 
     let textRow= [
         [
-            
             {text:'H',color:color1}, {text:'i',color:color1,isSpaceNeeded:true}, {text:'i',color:color1}, {text:"'",color:color1}, {text:'m',color:color1,isSpaceNeeded:true}, {text:'F',color:color2},
             {text:'r',color:color2}, {text:'a',color:color2}, {text:'n',color:color2}, {text:'c',color:color2}, {text:'i',color:color2}, {text:'s',color:color2}
         
@@ -92,7 +89,6 @@ var $grid = $(".grid").isotope({
 
 // filter items on button click
 $(".button-group").on("click", "button", function(){
-    
     var filterValue = $(this).attr('data-filter');
     $grid.isotope({ filter: filterValue});
 })
@@ -141,9 +137,6 @@ $("#view").addClass("theme-dark");
 
 /**Toggle between light and dark mode */
 $("#toggle-light-mode").click(function(event){
-    /*
-    $("body").css({"background": "url('./assets/anonym.png')", "background-repeat": "no-repeat",  "background-size": "cover", "background-position": "center center"});
-    */
     $("#view").toggleClass("theme-light");
     $("#view").toggleClass("theme-dark");
     $("#header").toggleClass("color-white");
@@ -239,25 +232,11 @@ $("html,body").click(function(evt){
 
 /*on clicking the image referring to the beloxxi mobile app*/
 $("#latest-works #beloxxi-app .overlay").click(function(){
-
-    // let appImages= ["./assets/beloxxiapp1.jpg","./assets/beloxxiapp2.jpg","./assets/beloxxiapp3.jpg","./assets/beloxxiapp4.jpg","./assets/beloxxiapp5.jpg","./assets/beloxxiapp6.jpg","./assets/beloxxiapp7.jpg","./assets/beloxxiapp8.jpg","./assets/beloxxiapp0.jpg"];
-    // let slideType= "mobile-app-slideshow";
-
-    /*caption for the Beloxxi App*/
-    // let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter: https://github.com/duziem/beloxxi-app"};
-    //let appCaption= {heading: "Employee Mgt App",body: "This Application was built using Flutter:the Dart framework. The app consists of: An income calculator which enables employees calculate their earnings; A profile screen which enables employees view the recent state of their profile in the company's database; An Info screen which enables an administrator upload content in order to circulate information to other employees via the app"};
-    // setHtml(appImages, slideType, appCaption);
 })
 
 /*on clicking the image referring to the ecommerce app*/
 $("#latest-works #ecommerce-app .overlay").click(function(){
-    // window.location.href= "./pages/ecommerce-app.html"
     window.open('./pages/ecommerce-app/ecommerce-app.html', '_blank');
-    // let appImages= ["./assets/pgh1.jpg","./assets/pgh2.jpg","./assets/pgh3.jpg","./assets/pgh4.jpg","./assets/pgh5.jpg"];
-    // let slideType= "web-app-slideshow";
-    // let appCaption= {heading: "PHP E-commerce App",body: "https://github.com/duziem/php-ecommerce-app"};//caption for the ecommerce app
-    // //let appCaption= {heading: "E-commerce Application",body: "This E-commerce Application is built on php. The App enables you to view gadgets that have been uploaded to the site, make orders, and checkout your orders, add to wishlist&add to cart. The App was made for Premium Gadget Gub: an SME that deals in Gadgets and Electornics"};//caption for the ecommerce app
-    // setHtml(appImages, slideType, appCaption);
 })
 $("#latest-works #github-finder .overlay").click(function(){
     window.open('./pages/github-finder/github-finder.html', '_blank');
@@ -265,49 +244,7 @@ $("#latest-works #github-finder .overlay").click(function(){
 
 /*on clicking the image referring to the php secure user app*/
 $("#latest-works #user-app .overlay").click(function(){
-
-    // let appImages= ["./assets/user app1.jpg","./assets/user app2.jpg","./assets/user app3.jpg","./assets/user app4.jpg"];
-    // let slideType= "web-app-slideshow";
-    // let appCaption= {heading: "PHP Secure User Form",body: ""}; //caption for the app
-    // setHtml(appImages, slideType, appCaption);
 })
-
-// function setHtml(appImages, slideType, appCaption){
-//     let overlayContent= '<span id="close-fullscreen-overlay" style="font-size:80px;position:absolute;top:3;right:5vw;color:white;cursor:pointer;width: 80px;height: 80px;">&times;</span><div style="display: flex;align-items: center;justify-content: center;height: 100%;width:100%;"><div id="' + slideType + '" class="carousel slide" data-ride="carousel"><div class="row"><div class="carousel-inner col-8 offset-2 w-100 p-0">';
-//     for(let i=0;i<appImages.length;i++){
-//         if(i == 0){
-//             overlayContent += '<div class="carousel-item active"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
-//             continue;
-//         }
-//         overlayContent += '<div class="carousel-item"><img src="' + appImages[i] + '" alt="" class="img-fluid"></div>';
-    
-//     }
-//     overlayContent += '</div></div><a class="carousel-control-prev" href="#' + slideType + '" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#' + slideType + '" data-slide="next"><span class="carousel-control-next-icon"></span></a></div></div><div id="app-caption" class="text-white" style="position:absolute;bottom:0;left:10vw;"><h4>' + appCaption.heading + '</h4><p>' + appCaption.body + '</p></div>';
-
-//     $("#fullscreen-overlay").html(
-//         overlayContent
-//     )
-
-//     //$('body').css('position', 'fixed'); //make the entire document fixed in order to prevent scrolling when the overlay is open
-
-//     displayFullScreenOverlay(); //display the full screen overlay with the new html content
-
-//     closeFullScreenOverlay(); //close the full screen overlay
-// }
-
-// /*display the full screen overlay*/
-// function displayFullScreenOverlay(){
-//     $("#fullscreen-overlay").css("display","block"); 
-// }
-
-// /*close the full screen overlay*/
-// function closeFullScreenOverlay(){
-//     $("#close-fullscreen-overlay").click(function(){4
-//         $("#fullscreen-overlay").css("display","none"); //remove the overlay from view
-//         $("#fullscreen-overlay").html(); //clear the contents of the overlay
-//         $('body').css('position', 'static'); // make the document scrollable again
-//     })
-// }
 
 
 /*slide the 3 elements that display my services upwards one after the other when the window is scrolled to that section of the document*/
@@ -316,17 +253,14 @@ function slideUpFunction(){
     if(document.body.scrollTop >= 1360 || document.documentElement.scrollTop >= 1360){
         var services= document.getElementsByClassName("services");
         //alert(services[0].getBoundingClientRect().top);
-        // services[0].style.visibility= "visible";
         services[0].classList.add("slideUp");
     }
     if(document.body.scrollTop > 1520 || document.documentElement.scrollTop > 1520){
         var services= document.getElementsByClassName("services");
-        // services[1].style.visibility= "visible";
         services[1].classList.add("slideUp");
     }
     if(document.body.scrollTop >= 1620 || document.documentElement.scrollTop >= 1620){
         var services= document.getElementsByClassName("services");
-        // services[2].style.visibility= "visible";
         services[2].classList.add("slideUp");
         
     }
