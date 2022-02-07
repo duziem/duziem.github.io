@@ -230,28 +230,41 @@ $("html,body").click(function(evt){
  
 /**The code below controls the full screen overlay displaying the app carousel */
 
-/*on clicking the image referring to the beloxxi mobile app*/
-$("#latest-works #beloxxi-app .overlay").click(function(){
-    window.open('./pages/beloxxi-app/beloxxi-app.html', '_blank');
+/*Navigate to the immigration website on clicking the overlay */
+$("#latest-works #immigration-app .overlay").click(function(){
+    window.open('https://sample-immigration.000webhostapp.com', '_blank');
 })
 
-/*on clicking the image referring to the ecommerce app*/
+/*Navigate to the ecommerce app page on clicking the overlay */
 $("#latest-works #ecommerce-app .overlay").click(function(){
     window.open('./pages/ecommerce-app/ecommerce-app.html', '_blank');
 })
+
+/*Navigate to the github finder app on netlify on clicking on the overlay*/
 $("#latest-works #github-finder .overlay").click(function(){
     window.open('https://github-finder8051.netlify.app/', '_blank');
 })
 
-/*on clicking the image referring to the php secure user app*/
+/*Navigate to the php secure user form on clicking the overlay*/
 $("#latest-works #user-app .overlay").click(function(){
     window.open('./pages/user-form/user-form.html', '_blank');
 })
 
+/*Navigate to the beloxxi mobile app on clicking the overlay */
+$("#latest-works #beloxxi-app .overlay").click(function(){
+    window.open('./pages/beloxxi-app/beloxxi-app.html', '_blank');
+})
+
+
 const services= document.getElementsByClassName("services");
 const myServices= document.getElementById("myServices");
 
-let serviceHeight= ($(document).height() - myServices.getBoundingClientRect().bottom) + 200;
+let serviceHeight;
+if($(document).height() > 4000){
+    serviceHeight= ($(document).height() - myServices.getBoundingClientRect().bottom) + 400;
+}else{
+    serviceHeight= ($(document).height() - myServices.getBoundingClientRect().bottom) + 200;
+}
 /*slide the 3 elements that display my services upwards one after the other when the window is scrolled to that section of the document*/
 window.onscroll = function(){slideUpFunction()};
 	

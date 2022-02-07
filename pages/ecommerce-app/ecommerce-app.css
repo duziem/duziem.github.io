@@ -9,7 +9,6 @@
     }
     .swiper-slide {
     background-position: bottom;
-    /* background-size: cover; */
     background-size: contain;
     background-repeat: no-repeat;
     height: 50vh !important;
