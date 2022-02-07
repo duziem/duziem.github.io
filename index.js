@@ -232,6 +232,7 @@ $("html,body").click(function(evt){
 
 /*on clicking the image referring to the beloxxi mobile app*/
 $("#latest-works #beloxxi-app .overlay").click(function(){
+    window.open('./pages/beloxxi-app/beloxxi-app.html', '_blank');
 })
 
 /*on clicking the image referring to the ecommerce app*/
@@ -239,32 +240,27 @@ $("#latest-works #ecommerce-app .overlay").click(function(){
     window.open('./pages/ecommerce-app/ecommerce-app.html', '_blank');
 })
 $("#latest-works #github-finder .overlay").click(function(){
-    window.open('./pages/github-finder/github-finder.html', '_blank');
+    window.open('https://github-finder8051.netlify.app/', '_blank');
 })
 
 /*on clicking the image referring to the php secure user app*/
 $("#latest-works #user-app .overlay").click(function(){
+    window.open('./pages/user-form/user-form.html', '_blank');
 })
 
+const services= document.getElementsByClassName("services");
+const myServices= document.getElementById("myServices");
 
+let serviceHeight= ($(document).height() - myServices.getBoundingClientRect().bottom) + 200;
 /*slide the 3 elements that display my services upwards one after the other when the window is scrolled to that section of the document*/
-window.onscroll = function(){slideUpFunction()};		
+window.onscroll = function(){slideUpFunction()};
+	
 function slideUpFunction(){
-    if(document.body.scrollTop >= 1360 || document.documentElement.scrollTop >= 1360){
-        var services= document.getElementsByClassName("services");
-        //alert(services[0].getBoundingClientRect().top);
+
+        if(myServices.getBoundingClientRect().bottom < serviceHeight ){
         services[0].classList.add("slideUp");
-    }
-    if(document.body.scrollTop > 1520 || document.documentElement.scrollTop > 1520){
-        var services= document.getElementsByClassName("services");
         services[1].classList.add("slideUp");
-    }
-    if(document.body.scrollTop >= 1620 || document.documentElement.scrollTop >= 1620){
-        var services= document.getElementsByClassName("services");
         services[2].classList.add("slideUp");
-        
     }
-
 }
-
 })

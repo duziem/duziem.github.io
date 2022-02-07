@@ -10,7 +10,8 @@
 
      <!-- font awesome icons -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./loader.css">
+    <!--Loader/spinner.css-->
+     <link rel="stylesheet" href="./loader.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
@@ -127,7 +128,7 @@
 
         #header {
             position: relative;
-            background: url("./assets/Effect1.png");
+            background: url("./assets/Effect2.png");
             background-position: 95% 30%;
             background-size: 1000px;
             height: 100vh;
@@ -452,6 +453,7 @@
             /* visibility: hidden; */
             padding: 0;
             margin: 0;
+            opacity: 0;
         }
 
         /* Create a drop down shadow for the services icons*/
@@ -466,6 +468,8 @@
 			animation-duration:1s;
 			-webkit-animation-name:slideup;
 			-webkit-animation-duration:1s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
 			padding:30px 0 30px 70px;
 		}
 		@keyframes slideup{
@@ -616,22 +620,23 @@
 
         }
 
-        @media screen and (min-width: 1024px)and (max-width: 1280px){
+        @media screen and (min-width: 800px)and (max-width: 1280px){
             #header {
+                background-size: 73.86vw;
                 height: 80vh;
-                background-size: cover;
+                /* background-size: cover; */
             }
             #header #text h1{
                 color: inherit;
-                font-size: 60px;
+                font-size: 50px;
             }
             #header #text h2{
-                font-size: 40px;
+                font-size: 30px;
             }
             #header #text button{
-                width: 150px;
-                border-radius: 40px 40px 40px 40px;
-                font-size: 30px;
+                width: 100px;
+                border-radius: 28px 28px 28px 28px;
+                font-size: 20px;
             }
             #header #profile-image{
                 width: 20vh;
@@ -798,7 +803,7 @@
                                 <div class="img-box" id="immigration-app">
                                     <img src="./assets/immigration-website.jpg" alt="immigration-app-thumbnail" width="100%" height="100%" >
                                     <div class="overlay" style="cursor: pointer;"></div>
-                                    <a href="https://sample-immigration.000webhostapp.com" target= "_blank" ><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>F&R immigration Site</p></a>
+                                    <a href="https://sample-immigration.000webhostapp.com" target= "_blank" ><p class="color-white site-name text-center">F&R immigration Site</p></a>
                                 </div>
                             </div>
     
@@ -807,7 +812,8 @@
                                 <div class="img-box" id="ecommerce-app">
                                     <img src="./assets/pgh6.jpg" alt="ecommerce-app-thumbnail" width="100%" height="100%" >
                                     <div class="overlay" style="cursor: pointer;"></div>
-                                    <a href="https://github.com/duziem/php-ecommerce-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Ecommerce App</p></a>
+                                    <!-- <a href="https://github.com/duziem/php-ecommerce-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Ecommerce App</p></a> -->
+                                    <a href="./pages/ecommerce-app/ecommerce-app.html" target="_blank"><p class="color-white site-name text-center">Ecommerce App</p></a>
                                 </div>
                             </div>
 
@@ -816,7 +822,7 @@
                                 <div class="img-box" id="github-finder">
                                     <img src="./assets/gf1.jpg" alt="github-finder-thumbnail" width="100%" height="100%" >
                                     <div class="overlay" style="cursor: pointer;"></div>
-                                    <a href="https://github-finder8051.netlify.app/" target= "_blank" ><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Github Finder</p></a>
+                                    <a href="https://github-finder8051.netlify.app/" target= "_blank" ><p class="color-white site-name text-center">Github Finder</p></a>
                                 </div>
                             </div>
     
@@ -825,7 +831,7 @@
                                 <div class="img-box" id="user-app">
                                     <img src="./assets/user app1.jpg" alt="web-form-thumbnail" width="100%" height="100%" >
                                     <div class="overlay" style="cursor: pointer;"></div>
-                                    <a href="https://github.com/duziem/php-secure-user-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Secure User App</p></a>
+                                    <a href="./pages/user-form/user-form.html" target="_blank"><p class="color-white site-name text-center">Secure User Form</p></a>
                                 </div>
                             </div>
                             
@@ -834,7 +840,7 @@
                                 <div class="img-box" id="beloxxi-app">
                                     <img src="./assets/bil5.jpg" alt="mobile-app-thumbnail" width="100%" height="100%" >
                                     <div class="overlay" style="cursor: pointer;"></div>
-                                    <a href="https://github.com/duziem/beloxxi-app"><p class="color-white site-name text-center"><i class="fab fa-github" aria-hidden="true">&nbsp;</i>Employee Management App</p></a>
+                                    <a href="./pages/beloxxi-app/beloxxi-app.html" target="_blank"><p class="color-white site-name text-center">Employee Mgt App</p></a>
                                 </div>
                             </div>
     
