@@ -9,8 +9,7 @@
     }
     .swiper-slide {
     background-position: bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     height: 50vh !important;
     box-shadow: 1px 3px 3px rgba(0,0,0,0.2);
 
@@ -45,5 +44,20 @@
     position: absolute;
     bottom: -42%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(4, 4, 15));
-
     }
+
+     /*** Media Queries ******/
+     @media screen and (max-width: 800px){
+        .swiper-slide {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .swiper-slide::after {
+            height:10%;
+            bottom: -11%;
+            }
+            .swiper-slide::before {
+            height:12%;
+            bottom: -12%;
+            }
+     }

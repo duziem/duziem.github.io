@@ -24,24 +24,23 @@
     background-image: url("../../assets/beloxxiapp8.jpg");
     }
     .swiper-slide::after {
-    content:"";
-    background-image: inherit;
-    background-position: bottom;
-    background-size: cover;
-    transform:  scaleY(-1);
-    width: inherit;
-    height:40%;
-    position: absolute;
-    bottom: -41%;
-    opacity: 0.4;
-    }
-    .swiper-slide::before {
-    z-index: 1;
-    content:"";
-    width: inherit;
-    height:42%;
-    position: absolute;
-    bottom: -42%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(4, 4, 15));
-
-    }
+        content:"";
+        background-image: inherit;
+        background-position: bottom;
+        background-size: cover;
+        transform:  scaleY(-1);
+        width: inherit;
+        height:40%;
+        position: absolute;
+        bottom: -41%;
+        opacity: 0.4;
+        }
+        .swiper-slide::before {
+        z-index: 1;
+        content:"";
+        width: inherit;
+        height:42%;
+        position: absolute;
+        bottom: -42%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(4, 4, 15));
+        }

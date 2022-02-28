@@ -1,7 +1,7 @@
-$('#view').css({'visibility': 'hidden'}); // set the document visibility to hidden when the document is not yet ready
+// $('#view').css({'visibility': 'hidden'}); // set the document visibility to hidden when the document is not yet ready
 $(document).ready(function(){
     $('#loader').css({'display': 'none'});
-    $('#view').css({'visibility': 'visible'});
+    // $('#view').css({'visibility': 'visible'});
     $('body').css({ 'overflow-y': 'visible'});
 /** create a typewriter animation for the welcome text-- Hi i'm Francis... */
 function typewriter(text, i, textRowIndex, callBackFn, currentText){
@@ -20,12 +20,10 @@ function typewriter(text, i, textRowIndex, callBackFn, currentText){
             currentText += "<span class='color-" + text[i].color + "'><h1>" + text[i].text + space + "</h1></span>"; // update the current text-- here the h1 element is used
             let firstRow= document.getElementById('first-row-of-text'); //get the first row of text container
             firstRow.innerHTML= `${currentText}<span class="blinking-insert-line color-gray"></span>`;
-            //$('#first-row-of-text').html(`<span class=${text[i].color}><h1>${currentText + space}</h1></span><span id="blinking-insert-line"></span>`);
         }else if(textRowIndex == 1){
             currentText += "<span class='color-" + text[i].color + "'><h2>" + text[i].text + space + "</h2></span>"; // update the current text-- here the h2 element is used
             let secondRow= document.getElementById('second-row-of-text');//get the second row of text container
             secondRow.innerHTML= `${currentText}<span class="blinking-insert-line color-gray"></span>`;
-            //$('#second-row-of-text').html(`<span class=${text[i].color}><h1>${currentText + space}</h1></span><span id="blinking-insert-line"></span>`);
         }
 
         setTimeout(() => {
@@ -115,13 +113,6 @@ $("#profile-card").mouseout(function(){
 
 
 //set the skills section display to none when the chevron-down profile-toggle-btn btn is clicked
-/*
-$("#profile-toggle-btn").click(function(event){
-    $("#skills-section").toggleClass("d-none");
-    $(this).toggleClass("rotate-180");    
-    
-})
-*/
 let toggleProfileBtn= document.getElementById('profile-toggle-btn');
 let skill= document.getElementById('skills-section');
 skill.style.display == 'none'
@@ -243,6 +234,10 @@ $("#latest-works #ecommerce-app .overlay").click(function(){
 /*Navigate to the github finder app on netlify on clicking on the overlay*/
 $("#latest-works #github-finder .overlay").click(function(){
     window.open('https://github-finder8051.netlify.app/', '_blank');
+})
+
+$("#latest-works #contact-keeper .overlay").click(function(){
+    window.open('https://mighty-wave-94705.herokuapp.com/', '_blank');
 })
 
 /*Navigate to the php secure user form on clicking the overlay*/
