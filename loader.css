@@ -1,4 +1,81 @@
-#loader {
+#loader{
+    background: rgb(4, 4, 15);
+    position: fixed; 
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    z-index: 8000;
+    animation: animateColor 8s linear infinite
+}
+
+@keyframes animateColor{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+section .loader-container{
+    display: flex
+}
+section .loader-container .circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+section .loader-container .circle span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+}
+section .loader-container .circle span::before{
+    content: '';
+    position: absolute;
+    top: calc(50% - 7.5px);
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: #00ff0a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff0a,
+    0 0 20px #00ff0a,
+    0 0 40px #00ff0a,
+    0 0 60px #00ff0a,
+    0 0 80px #00ff0a,
+    0 0 100px #00ff0a;
+    transform: scale(0.1);
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate{
+    0%{
+        transform: scale(1);
+    }
+    50%,100%{
+        transform: scale(0.1);
+    }
+}
+
+@-webkit-keyframes animate{
+    0%{
+        transform: scale(1);
+    }
+    50%,100%{
+        transform: scale(0.1);
+    }
+}
+
+/* #loader {
     background: rgb(4, 4, 15);
     position: fixed; 
     left: 0; 
@@ -48,4 +125,4 @@
     100%{
         transform: rotate(360deg);
     }
-}
+} */
