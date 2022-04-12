@@ -136,6 +136,8 @@ $("#toggle-light-mode").click(function(event){
     $("#myServices .services i").toggleClass("color-dark");
     $("section#about #profile-card").toggleClass("shadow-light");
     $("section#about #profile-card").toggleClass("shadow-dark");
+    $("#latest-works .grid .grid-item .img-box").toggleClass("shadow-light");
+    $("#latest-works .grid .grid-item .img-box").toggleClass("shadow-dark");
 })
 /**Toggle between light and dark mode */
 
