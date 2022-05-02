@@ -16,6 +16,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap');
 
         *{
             margin: 0;
@@ -54,7 +55,7 @@
        }
 
         .font-theme{
-            font-family: 'poppins',sans-serif;
+            font-family: 'Nunito','poppins',sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -74,7 +75,7 @@
             color:#708090;
         }
         .color-cadetblue{
-            color:cadetblue
+            color:#2193b0
         }
 
         .d-none{
@@ -231,7 +232,7 @@
         /*** h1 Text:Hi i'm Francis ***/
         #header #text h1{
             font-size: 70px;
-            font-family: 'tahoma',sans-serif;
+            /* font-family: 'tahoma',sans-serif; */
             -webkit-font-smoothing: antialiased;
             -moz-font-smoothing:grayscale;
         }
@@ -239,7 +240,7 @@
          /*** h2 Text:I am a full stack developer ***/
          #header #text h2{
             font-size: 40px;
-            font-family: 'tahoma',sans-serif;
+            /* font-family: 'tahoma',sans-serif; */
             -webkit-font-smoothing: antialiased;
             -moz-font-smoothing:grayscale;
         }
@@ -279,7 +280,7 @@
             right: 0;
             height: 100vh;
             width: 50px;
-            background: linear-gradient(slategray, white);
+            background: linear-gradient(#2c3e50, white);
             color: inherit;
             z-index: 2;
             padding: 10px 10px;
@@ -395,9 +396,9 @@
             /*box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);*/
         }
 
-        section #profile-card .detail{
-            font-size: 18px;
-        }
+        /* section #profile-card .detail{
+            font-size: 14px;
+        } */
         
         section#about #profile-card .skill-bar{
             background-color: #bdc9ea;
@@ -408,13 +409,13 @@
             border-radius: 16px;
             text-align: center;
             color:#fff;
-            background-color:cadetblue;
+            background-color:#2193b0;
         }
 
         
 
         /*the full screen overlay which displays a slideshow of the apps worked on*/
-        #fullscreen-overlay{
+        /* #fullscreen-overlay{
             position: fixed;
             top:0;
             bottom: 0;
@@ -427,23 +428,23 @@
         #fullscreen-overlay .carousel-inner img{
             height: 460px;
             width: 100%;
-        }
+        } */
 
         /**make the width responsive for the web app slideshow**/
-        #fullscreen-overlay #web-app-slideshow{
+        /* #fullscreen-overlay #web-app-slideshow{
             width: max(600px,1200vw);
-        }
+        } */
 
         /**style the width for the mobile app slideshow**/
-        #fullscreen-overlay #mobile-app-slideshow{
+        /* #fullscreen-overlay #mobile-app-slideshow{
             width: 600px;
-        }
+        } */
 
         /**style the prev and next carousel icons for when viewing on desktop**/
-        #fullscreen-overlay .carousel span{
+        /* #fullscreen-overlay .carousel span{
             width: 40px;
             height: 40px;
-        }
+        } */
 
         /*Set the chevron-down icon display property (shown on the profile card when viewing on smaller screens) to none*/
         #profile-toggle-btn{
@@ -595,13 +596,13 @@
             }
 
             /**the carousel images**/
-            #fullscreen-overlay .carousel-inner img{
+            /* #fullscreen-overlay .carousel-inner img{
                 height: 300px;
                 width: 100%;
-            }
+            } */
 
             /**adjust the width & height of the prev and next carousel buttons for when they are displayed on mobile devices**/
-            #fullscreen-overlay .carousel span{
+            /* #fullscreen-overlay .carousel span{
                 width: 20px;
                 height: 20px;
             }
@@ -611,7 +612,7 @@
             }
             #fullscreen-overlay #app-caption p{
                 font-size:12px
-            }
+            } */
 
             /*the button labelled profile found in the header section*/
             #profile-toggle-btn{
@@ -708,7 +709,7 @@
     
     <div id="view">
         <!--Place the overlay showcasing the apps designed here-->
-        <div id="fullscreen-overlay"></div>
+        <!-- <div id="fullscreen-overlay"></div> -->
     
         <!--Header Area-->
         <header>
@@ -718,7 +719,7 @@
             
             <div id="header">
                  <!--desktop view inline nav menu-->
-                <nav  id="desktop-menu" class="d-flex justify-content-end nav-menu">
+                <nav  id="desktop-menu" class="d-flex justify-content-end nav-menu font-theme">
                     <ul class="font-size-18 text-bold">
                         <li><a id="about-link" href="#">About</a></li>
                         <li><a id="works-link" href="#">Works</a></li>
@@ -742,11 +743,11 @@
                     <!--The horizontal bar above the text:"Hi I'm Francis I'm a web developer"-->
                     <div></div>
                     <!--Hi I'm Francis-->
-                    <div class="d-flex" id="first-row-of-text">
+                    <div class="d-flex font-theme" id="first-row-of-text">
                     </div>
     
                     <!--I'm a web developer-->
-                    <div class="d-flex" id="second-row-of-text">
+                    <div class="d-flex font-theme" id="second-row-of-text">
                     </div>
     
                     <a id="profile-btn" href="#"><button type="button">Profile</button></a>
@@ -797,15 +798,16 @@
     
                     <div id="grid-align" class="row justify-content-center">
                         <div class="grid">
+
                             <div class="grid-item web">
-                                <!--F&R immigration website-->
-                                <div class="img-box shadow-dark" id="immigration-app">
-                                    <img src="./assets/immigration-website.jpg" alt="immigration-app-thumbnail" width="100%" height="100%" >
+                                <!--Proshop app-->
+                                <div class="img-box shadow-dark" id="proshopapp">
+                                    <img src="./assets/proshopapp.png" alt="proshopapp-thumbnail" width="100%" height="100%" >
                                     <div class="overlay" style="cursor: pointer;"></div>
-                                    <a href="https://sample-immigration.000webhostapp.com" target= "_blank" ><p class="color-white site-name text-center">F&R immigration Site</p></a>
+                                    <a href="https://codedmindzproshopapp.herokuapp.com/" target= "_blank" ><p class="color-white site-name text-center">Proshop ecommerce app</p></a>
                                 </div>
                             </div>
-                            
+
                             <div class="grid-item web">
                                 <!--Contact Keeper-->
                                 <div class="img-box shadow-dark" id="contact-keeper">
@@ -830,6 +832,15 @@
                                     <img src="./assets/gf1.jpg" alt="github-finder-thumbnail" width="100%" height="100%" >
                                     <div class="overlay" style="cursor: pointer;"></div>
                                     <a href="https://github-finder8051.netlify.app/" target= "_blank" ><p class="color-white site-name text-center">Github Finder</p></a>
+                                </div>
+                            </div>
+
+                            <div class="grid-item web">
+                                <!--F&R immigration website-->
+                                <div class="img-box shadow-dark" id="immigration-app">
+                                    <img src="./assets/immigration-website.jpg" alt="immigration-app-thumbnail" width="100%" height="100%" >
+                                    <div class="overlay" style="cursor: pointer;"></div>
+                                    <a href="https://sample-immigration.000webhostapp.com" target= "_blank" ><p class="color-white site-name text-center">F&R immigration Site</p></a>
                                 </div>
                             </div>
 
@@ -880,10 +891,10 @@
     
                     <!--Profile Details-->
                     <div class="w-100 detail">
-                        <div class="mt-5 color-gray" style="font-family: 'montserrat';"><i class="fas fa-user color-cadetblue"></i>&nbsp;&nbsp;Nnaemezie Francis Okeke</div>
-                        <div class="mt-3 color-gray" style="font-family: 'montserrat';"><i class="fas fa-toolbox color-cadetblue"></i>&nbsp;&nbsp;Full Stack Developer</div>
-                        <div class="mt-3 color-gray" style="font-family: 'montserrat';"><i class="fas fa-envelope info color-cadetblue"></i>&nbsp;&nbsp;nnaemezie.okeke@gmail.com</div>
-                        <div class="mt-3 color-gray" style="font-family: 'montserrat';font-style: italic;"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591</div>
+                        <div class="mt-5 color-gray font-theme"><i class="fas fa-user color-cadetblue"></i>&nbsp;&nbsp;Nnaemezie Francis Okeke</div>
+                        <div class="mt-3 color-gray font-theme"><i class="fas fa-toolbox color-cadetblue"></i>&nbsp;&nbsp;Full Stack Developer</div>
+                        <div class="mt-3 color-gray font-theme"><i class="fas fa-envelope info color-cadetblue"></i>&nbsp;&nbsp;nnaemezie.okeke@gmail.com</div>
+                        <div class="mt-3 color-gray font-theme"><i class="fas fa-phone info color-cadetblue"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591</div>
                         
                     </div>
                      <!-- profile toggle button-->
@@ -973,21 +984,21 @@
                     <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
                         <i class="fab fa-html5 mb-3 color-dark" aria-hidden="true"></i>
                         <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
-                        <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of web solutions to businesses and organizations to enable them network with a global audience and enhance the appeal of product and services</p>
+                        <p class="font-theme mt-2 color-gray">Provision of web solutions to businesses and organizations to enable them network with a global audience and enhance the appeal of product and services</p>
                     </div>
     
                     <!--mobile services-->
                     <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
                         <i class="fab fa-android mb-3 color-dark" aria-hidden="true"></i>
                         <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
-                        <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of mobile application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
+                        <p class="font-theme mt-2 color-gray">Provision of mobile application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                     </div>
     
                     <!--desktop services-->
                     <div class="col-lg-4 col-sm-12 text-center services mt-5 pl-5 pr-5">
                         <i class="fas fa-laptop mb-3 color-dark" aria-hidden="true"></i>
                         <div class="m-auto" style="width: 60px;height: 4px;background: linear-gradient(to right, slategray, white);"></div>
-                        <p class="font-theme mt-2 color-gray" style="font-family: 'georgia', tahoma, sans-serif;">Provision of desktop application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
+                        <p class="font-theme mt-2 color-gray">Provision of desktop application solutions to organizations to increase productivity by automating daily tasks in the workplace ensuring an increase in value provided thereby raising the botttom line</p>
                     </div>
                 </div>
             </div>
@@ -999,10 +1010,10 @@
             <div class="container">
                 <div class="row w-100 pt-4">
                     <div class="col-md-6 text-white">
-                        <p style="font-size: larger;margin:0;">If you want to link up i'm always down for a cup of coffee <i class="fas fa-coffee"></i> .. let's connect</p></br>
+                        <p class="font-theme" style="font-size: larger;margin:0;">If you want to link up i'm always down for a cup of coffee <i class="fas fa-coffee"></i> .. let's connect</p></br>
                         <p class="font-theme"  style="font-size: 36px;margin:10px 0">Contact</p>
                         <address>
-                            <i class="fas fa-envelope" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i><a class="text-white" href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
+                            <i class="fas fa-envelope" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i><a class="text-white font-theme" href="mailto:nnaemezie.okeke@gmail.com">&nbsp;&nbsp;nnaemezie.okeke@gmail.com</a>
                             </br></br>
                             <i class="fas fa-phone" aria-hidden="true" style="color: #2c3e50;filter: drop-shadow(-1px -1px 1px rgba(255,255,255,0.3)) drop-shadow(5px 5px 5px rgba(0,0,0,0.2)) drop-shadow(15px 15px 15px rgba(0,0,0,0.2))"></i>&nbsp;&nbsp;+2348144285460 | +2347054820591
                             </br></br>

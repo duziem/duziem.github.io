@@ -1,8 +1,8 @@
-// $('#view').css({'visibility': 'hidden'}); // set the document visibility to hidden when the document is not yet ready
+$('#view').css({'visibility': 'hidden'}); // set the document visibility to hidden when the document is not yet ready
 $(document).ready(function(){
-    $('#loader').css({'display': 'none'});
-    // $('#view').css({'visibility': 'visible'});
-    $('body').css({ 'overflow-y': 'visible'});
+    setTimeout(()=>{$('#loader').css({'display': 'none'}); $('body').css({ 'overflow-y': 'visible'});}, 1200)
+    $('#view').css({'visibility': 'visible'});
+    
 /** create a typewriter animation for the welcome text-- Hi i'm Francis... */
 function typewriter(text, i, textRowIndex, callBackFn, currentText){
 
@@ -244,6 +244,10 @@ $("#latest-works #contact-keeper .overlay").click(function(){
 
 $("#latest-works #it-logger .overlay").click(function(){
     window.open('https://stormy-crag-84716.herokuapp.com/', '_blank');
+})
+
+$("#latest-works #proshopapp .overlay").click(function(){
+    window.open('https://codedmindzproshopapp.herokuapp.com/', '_blank');
 })
 
 /*Navigate to the beloxxi mobile app on clicking the overlay */

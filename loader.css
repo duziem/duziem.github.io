@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center; 
     z-index: 8000;
-    animation: animateColor 8s linear infinite
+    animation: animateColor 8s linear infinite;
 }
 
 @keyframes animateColor{
@@ -44,14 +44,14 @@ section .loader-container .circle span::before{
     right: 0;
     width: 15px;
     height: 15px;
-    background: #00ff0a;
+    background: #2193b0;
     border-radius: 50%;
-    box-shadow: 0 0 10px #00ff0a,
-    0 0 20px #00ff0a,
-    0 0 40px #00ff0a,
-    0 0 60px #00ff0a,
-    0 0 80px #00ff0a,
-    0 0 100px #00ff0a;
+    box-shadow: 0 0 10px #2193b0,
+    0 0 20px #2193b0,
+    0 0 40px #2193b0,
+    0 0 60px #2193b0,
+    0 0 80px #2193b0,
+    0 0 100px #2193b0;
     transform: scale(0.1);
     animation: animate 4s linear infinite;
     animation-delay: calc(0.1s * var(--i));
