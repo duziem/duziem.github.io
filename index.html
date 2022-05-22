@@ -85,6 +85,12 @@
         .d-block{
             display: block;
         }
+        .v-visible{
+            visibility: visible;
+        }
+        .v-hidden{
+            visibility: hidden;
+        }
         
         .rotate-180{
             transform: rotateX(180deg);
@@ -125,6 +131,19 @@
 
         a{
             cursor: pointer;
+        }
+
+        #view{
+            visibility: hidden;
+        }
+
+        /*site logo*/
+        header #site-logo-div{
+            position: fixed;
+            width: 80px;
+            height: 60px;
+            margin: 5px 10px;
+            z-index:1000
         }
 
         #header {
@@ -538,6 +557,10 @@
 
         /*** Media Queries ******/
         @media screen and (max-width: 800px){
+            header #site-logo-div{
+                position:absolute;
+            }
+
             #header {
                 height: 80vh;
                 background-size:cover;
@@ -701,7 +724,8 @@
             }
 
         }
-        /*** Media Queries ******/      
+        /*** Media Queries ******/ 
+        
     </style>
     
 </head>
@@ -713,8 +737,8 @@
     
         <!--Header Area-->
         <header>
-            <div style="position: fixed;width: 80px;height: 60px;margin: 5px 10px;z-index:1000">
-                <a id="site-logo" href="#"><img src="./assets/mylogo.svg" alt="portfolio-logo" width="100%" height="100%"></a>
+            <div id="site-logo-div">
+                <a id="site-logo" href="#"><img src="./assets/mylogo.svg" alt="site-logo" width="100%" height="100%"></a>
             </div>
             
             <div id="header">

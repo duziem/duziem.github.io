@@ -1,6 +1,5 @@
-$('#view').css({'visibility': 'hidden'}); // set the document visibility to hidden when the document is not yet ready
 $(document).ready(function(){
-    setTimeout(()=>{$('#loader').css({'display': 'none'}); $('body').css({ 'overflow-y': 'visible'});}, 1200)
+    setTimeout(()=>{$('#loader').css({'display': 'none'}); $('body').css({ 'overflow-y': 'visible'});}, 800)
     $('#view').css({'visibility': 'visible'});
     
 /** create a typewriter animation for the welcome text-- Hi i'm Francis... */
