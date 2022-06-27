@@ -238,15 +238,15 @@ $("#latest-works #github-finder .overlay").click(function(){
 })
 
 $("#latest-works #contact-keeper .overlay").click(function(){
-    window.open('https://mighty-wave-94705.herokuapp.com/', '_blank');
+    window.open('https://codedmindz-contact-keeper.herokuapp.com/', '_blank');
 })
 
 $("#latest-works #it-logger .overlay").click(function(){
-    window.open('https://stormy-crag-84716.herokuapp.com/', '_blank');
+    window.open('https://codedmindz-it-logger.herokuapp.com/', '_blank');
 })
 
 $("#latest-works #proshopapp .overlay").click(function(){
-    window.open('https://codedmindzproshopapp.herokuapp.com/', '_blank');
+    window.open('https://proshopcommerce.herokuapp.com/', '_blank');
 })
 
 /*Navigate to the beloxxi mobile app on clicking the overlay */
