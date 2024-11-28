@@ -1,5 +1,8 @@
 $(document).ready(function(){
-    setTimeout(()=>{$('#loader').css({'display': 'none'}); $('body').css({ 'overflow-y': 'visible'});}, 800)
+    const maintenanceMessage = document.getElementById('maintenance-message');
+    maintenanceMessage.style.display = 'flex';
+
+    // setTimeout(()=>{$('#loader').css({'display': 'none'}); $('body').css({ 'overflow-y': 'visible'});}, 800)
     $('#view').css({'visibility': 'visible'});
     
 /** create a typewriter animation for the welcome text-- Hi i'm Francis... */
